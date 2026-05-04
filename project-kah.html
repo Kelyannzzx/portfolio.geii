@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet KAH | Kelyann CRIME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page-title="Projet KAH">
+  <div class="splash">
+    <div class="splash-content">
+      <div class="splash-subtitle">IUT de Bordeaux</div>
+    </div>
+  </div>
+  <div class="background fx-blur"></div>
+  <div class="background fx-grid"></div>
+
+  <header class="hero" id="home">
+    <nav class="nav">
+      <div class="brand">
+        <div class="geii-logo">
+          <img class="logo-img" src="Image/geii-logo.svg" alt="Logo GEII">
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="matieres.html">Matières</a></li>
+        <li><a href="projects.html" aria-current="page">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="projects.html">Retour projets</a>
+    </nav>
+
+    <div class="hero-grid project-page-hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Projet détaillé · SAE · Équipe 22</p>
+        <h1>Kart à Hélice (KAH)</h1>
+        <p class="lead">Concevoir et programmer une télécommande infrarouge (émetteur) et son récepteur embarqué sur un kart propulsé par hélice : vitesse, direction et klaxon transmis en temps réel via le protocole NEC.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal">
+      <div class="project-page-layout">
+        <div class="project-page-main">
+
+          <!-- Photo principale : rendu 3D du kart -->
+          <div class="project-media-slot giant photo">
+            <img src="Image/kah-render-3d.png" alt="Rendu 3D SolidWorks du kart à hélice WATT'KART">
+          </div>
+
+          <!-- Présentation générale -->
+          <div class="project-section-card">
+            <h2>Présentation générale</h2>
+            <p>
+              Le projet KAH (Kart À Hélice) est une SAE réalisée par l'équipe 22. L'objectif : concevoir un système de pilotage infrarouge complet pour un kart propulsé par hélice. Le système se compose de deux parties indépendantes programmées sur Arduino.
+            </p>
+            <br>
+            <p>
+              L'<strong>émetteur</strong> (télécommande) lit en permanence deux potentiomètres (vitesse et direction) ainsi qu'un bouton klaxon, encode ces données dans une trame <strong>NEC infrarouge</strong> et les envoie toutes les 333 ms ou immédiatement à chaque changement.
+            </p>
+            <br>
+            <p>
+              Le <strong>récepteur</strong>, embarqué sur le kart, décode la trame NEC reçue, vérifie le numéro d'équipe, puis pilote le <strong>moteur brushless</strong> (propulsion), le <strong>servomoteur</strong> (direction) et le <strong>buzzer</strong> (klaxon). Une LED bleue confirme la réception d'une trame valide ; une LED verte signale que l'Arduino est sous tension.
+            </p>
+          </div>
+
+          <!-- Galerie -->
+          <div class="project-gallery-grid">
+            <div class="project-media-slot photo">
+              <img src="Image/kah-logo-wattkart.jpg" alt="Logo officiel WATT'KART — projet GEII IUT Bordeaux">
+            </div>
+            <div class="project-media-slot">
+              <span>Photo de l'émetteur (télécommande)</span>
+            </div>
+            <div class="project-media-slot">
+              <span>Photo du récepteur sur le kart</span>
+            </div>
+          </div>
+
+          <!-- Développement technique -->
+          <div class="project-section-card">
+            <h2>Développement technique</h2>
+            <p>
+              <strong>Protocole NEC :</strong> La trame NEC transporte un octet d'adresse et un octet de données. L'adresse encode le klaxon (bit 7) et le numéro d'équipe sur 7 bits (0x22). Les données encodent la vitesse sur 3 bits (bits 2–0, valeurs 0–7) et la direction sur 5 bits (bits 7–3, valeurs 0–31).<br><br>
+              <strong>Émetteur (KAH_EMTT_EQ22) :</strong> Deux potentiomètres (A0 = vitesse, A1 = direction) sont lus et mappés en 0–7 et 0–31. Un bouton poussoir (pin 2, pull-up interne) détecte le klaxon. La LED infrarouge (pin 5) émet la trame via la bibliothèque NEC. L'envoi a lieu toutes les 333 ms ou dès qu'une valeur change, pour un contrôle réactif.<br><br>
+              <strong>Récepteur (KAH_RCPT_EQ22) :</strong> Le récepteur IR (pin 11) capte les trames. Après vérification du numéro d'équipe (0x16 dans ce binôme), la direction est convertie en angle servomoteur (0–180°) et la vitesse en signal PWM pour le moteur brushless (0–180). Le buzzer (pin 10) génère un signal carré à 4 kHz lors du klaxon. En cas de trame invalide, le moteur est stoppé et la LED bleue s'éteint.
+            </p>
+          </div>
+
+          <!-- Diagramme d'architecture -->
+          <div class="project-doc-grid">
+            <div class="project-doc-slot">Schéma de câblage émetteur (depuis Drive)</div>
+            <div class="project-doc-slot">Schéma de câblage récepteur (depuis Drive)</div>
+          </div>
+
+          <!-- Extrait code -->
+          <div class="project-section-card">
+            <h2>Architecture logicielle</h2>
+            <p>
+              Le code est structuré en couches fonctionnelles distinctes pour chaque Arduino :<br><br>
+              <strong>Émetteur :</strong> <code>AcquerirPotentiometre()</code> → <code>AcquerirBoutonKlaxon()</code> → <code>CalculerDonneeNEC()</code> + <code>CalculerAdresseNEC()</code> → <code>GenererTrameNEC()</code><br><br>
+              <strong>Récepteur :</strong> <code>AcquerirTrameNEC()</code> → <code>Securite()</code> + <code>ExtraireNumeroEquipe()</code> → <code>CalculerDirectionServomoteur()</code> + <code>CalculerVitesseMoteur()</code> + <code>ExtraireEtatBuzzer()</code> → <code>PiloterServomoteur()</code> + <code>PiloterMoteur()</code> + <code>PiloterBuzzer()</code><br><br>
+              Cette organisation — acquisition, traitement, action — garantit la lisibilité et facilite la maintenance du code embarqué.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="project-page-side">
+          <div class="project-info-card">
+            <h4>Résumé rapide</h4>
+            <ul>
+              <li>Équipe : EQ22 (IUT Bordeaux GEII)</li>
+              <li>Communication : protocole NEC infrarouge</li>
+              <li>Vitesse : 8 niveaux (3 bits, 0–7)</li>
+              <li>Direction : 32 positions (5 bits, 0–31)</li>
+              <li>Taux de rafraîchissement : 333 ms max</li>
+              <li>Klaxon : buzzer 4 kHz</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Composants émetteur</h4>
+            <ul>
+              <li>Arduino (MCU)</li>
+              <li>2 potentiomètres (vitesse + direction)</li>
+              <li>Bouton poussoir (klaxon)</li>
+              <li>LED infrarouge (pin 5)</li>
+              <li>Bibliothèque NEC maison</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Composants récepteur</h4>
+            <ul>
+              <li>Arduino (MCU)</li>
+              <li>Récepteur IR (pin 11)</li>
+              <li>Servomoteur (direction, pin 6)</li>
+              <li>Moteur brushless (vitesse, pin 9)</li>
+              <li>Buzzer (klaxon, pin 10)</li>
+              <li>LED bleue (trame valide)</li>
+              <li>LED verte (alimentation)</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Étapes du projet</h4>
+            <ul>
+              <li>Analyse du besoin et architecture</li>
+              <li>Développement bibliothèque NEC</li>
+              <li>Programmation de l'émetteur</li>
+              <li>Programmation du récepteur</li>
+              <li>Tests et validation terrain</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Établissement</h4>
+        <ul>
+          <li>IUT de Bordeaux</li>
+          <li>BUT GEII</li>
+          <li><a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" rel="noreferrer">Site officiel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mentions légales</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Portfolio</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="matieres.html">Matières</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <ul>
+          <li><a href="mailto:kelyann.crime@etu.u-bordeaux.fr">kelyann.crime@etu.u-bordeaux.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/kelyann-crim%C3%A9-219b1539a" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Kelyann CRIME</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Thermomètre | Kelyann CRIME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page-title="Projet Thermomètre">
+  <div class="splash">
+    <div class="splash-content">
+      <div class="splash-subtitle">IUT de Bordeaux</div>
+    </div>
+  </div>
+  <div class="background fx-blur"></div>
+  <div class="background fx-grid"></div>
+
+  <header class="hero" id="home">
+    <nav class="nav">
+      <div class="brand">
+        <div class="geii-logo">
+          <img class="logo-img" src="Image/geii-logo.svg" alt="Logo GEII">
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="matieres.html">Matières</a></li>
+        <li><a href="projects.html" aria-current="page">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="projects.html">Retour projets</a>
+    </nav>
+
+    <div class="hero-grid project-page-hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Projet détaillé · SAE · Baby Corporation</p>
+        <h1>Thermomètre de Bain pour Bébé</h1>
+        <p class="lead">Concevoir un circuit imprimé (PCB) répondant aux exigences de Baby Corporation : mesurer la température de l'eau du bain et signaler par trois LEDs si l'eau est froide, tiède ou chaude, avec une autonomie minimale de 24 h pour un coût inférieur à 20 € TTC.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal">
+      <div class="project-page-layout">
+        <div class="project-page-main">
+
+          <!-- Photo principale -->
+          <div class="project-media-slot giant photo">
+            <img src="Image/tdb-montage.jpg" alt="Montage final du thermomètre de bain TDB">
+          </div>
+
+          <!-- Présentation générale -->
+          <div class="project-section-card">
+            <h2>Présentation générale</h2>
+            <p>
+              Le projet TDB (Thermomètre De Bain) est une SAE réalisée en équipe de 4 pour le client <strong>Baby Corporation</strong>, encadrée par F. AUGEREAU et A. ADEL. L'objectif : concevoir un thermomètre de bain pour nourrissons, entièrement sur PCB double face (100 × 60 mm), capable de signaler la température de l'eau via trois LEDs colorées.
+            </p>
+            <br>
+            <p>
+              Le capteur <strong>LM35DZ</strong> produit une tension proportionnelle à la température (10 mV/°C). Deux comparateurs <strong>MCP6002</strong> et une porte <strong>NOR 74HC02N</strong> génèrent la logique d'allumage : LED bleue sous 35,5 °C (eau froide), LED verte entre 35,5 et 38,4 °C (eau tiède), LED rouge au-dessus de 38,4 °C (eau chaude). L'ensemble est alimenté par un accumulateur LiPo 2S (7,4 V — 350 mAh) régulé à 5 V par un LM78L05.
+            </p>
+          </div>
+
+          <!-- Synoptique architecture -->
+          <div class="project-media-slot giant photo">
+            <img src="Image/tdb-synoptique.png" alt="Synoptique d'architecture du produit — Acquisition, Traitement, Actions, Énergie">
+          </div>
+
+          <!-- Galerie LEDs -->
+          <div class="project-gallery-grid">
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-led-bleue.jpg" alt="LED bleue allumée — eau froide (< 35,5 °C)">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-led-verte.jpg" alt="LED verte allumée — eau tiède (35,5–38,4 °C)">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-led-rouge.jpg" alt="LED rouge allumée — eau chaude (> 38,4 °C)">
+            </div>
+          </div>
+
+          <!-- Développement technique -->
+          <div class="project-section-card">
+            <h2>Développement technique</h2>
+            <p>
+              <strong>Mesure :</strong> Le capteur LM35DZ (plage 2–150 °C, 10 mV/°C) délivre directement une tension en sortie sans circuit de conditionnement complexe.<br><br>
+              <strong>Seuils :</strong> Un pont diviseur à trois résistances (R4 = 22 kΩ, R5 = 750 Ω, R6 = 300 Ω) génère V<sub>seuil_froid</sub> = 0,36 V (36 °C) et V<sub>seuil_chaud</sub> = 0,39 V (39 °C), confirmés par simulation ISIS.<br><br>
+              <strong>Logique :</strong> Deux comparateurs MCP6002 (rail-to-rail, 1,8–6 V) comparent la tension capteur aux deux seuils. Une porte NOR 74HC02N combine les sorties pour piloter les trois LEDs : une seule LED allumée à la fois selon la plage de température.<br><br>
+              <strong>Alimentation :</strong> Accumulateur LiPo 2S (7,4 V — 350 mAh) → régulateur LM78L05 (5 V). Courant mesuré : 7,63 mA → autonomie réelle de <strong>36,6 h</strong> (exigence : 24 h). Interrupteur DPDT JS202011 pour la coupure totale.<br><br>
+              <strong>PCB :</strong> Circuit double face CIF AB60 (100 × 60 mm), gravure par oxydoréduction, plan de masse, trous Ø 4 mm à 5 mm des bords.
+            </p>
+          </div>
+
+          <!-- Galerie marche/arrêt + autonomie -->
+          <div class="project-gallery-grid">
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-on.jpg" alt="Thermomètre en marche — LED bleue allumée (température ambiante)">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-off.jpg" alt="Thermomètre à l'arrêt — aucune LED allumée">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-autonomie.jpg" alt="Test d'autonomie — mesure du courant consommé">
+            </div>
+          </div>
+
+          <!-- Mesures seuils -->
+          <div class="project-doc-grid">
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-seuil-froid.png" alt="Mesure seuil froid — 35,5 °C (0,355 V), erreur 1,4 %">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-seuil-chaud.png" alt="Mesure seuil chaud — 38,4 °C (0,386 V), erreur 1,5 %">
+            </div>
+          </div>
+
+          <!-- Schémas électroniques -->
+          <div class="project-section-card">
+            <h2>Schémas électroniques</h2>
+            <p>
+              <strong>Schéma ISIS</strong> — découpage fonctionnel <em>Acquisition → Traitement → Action → Énergie</em> : le LM35 fournit la tension TEMPERATURE, comparée aux seuils SEUIL_FROID/SEUIL_CHAUD générés par le pont diviseur, traitée par les deux MCP6002 et la porte NOR 74HC02N, puis envoyée vers les trois LEDs. L'étage Énergie regroupe l'accumulateur LiPo, l'interrupteur DPDT et le régulateur LM78L05.<br><br>
+              <strong>Routage ARES</strong> — PCB double face 100 × 60 mm avec plan de masse, pistes optimisées et trous de fixation aux quatre coins.
+            </p>
+          </div>
+
+          <div class="project-doc-grid">
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-schema-isis.png" alt="Schéma électrique sur ISIS — Acquisition, Traitement, Action, Énergie">
+            </div>
+            <div class="project-media-slot photo">
+              <img src="Image/tdb-schema-ares.png" alt="Routage du PCB sous ARES — TDB EQ23">
+            </div>
+          </div>
+
+          <!-- Liste des composants -->
+          <div class="project-section-card">
+            <h2>Liste des composants</h2>
+            <p>
+              Tableau récapitulatif des composants retenus avec leurs caractéristiques principales et secondaires : résistances calibrées, condensateurs, capteur LM35DZ, AOP MCP6002, porte NOR 74HC02N, régulateur LM78L05ACZ, LEDs (bleue MP000436, verte HLMP-Y801, rouge TLDR4900) et interrupteur DPDT JS202011.
+            </p>
+          </div>
+
+          <div class="project-media-slot giant photo">
+            <img src="Image/tdb-composants.png" alt="Tableau des composants du circuit de la carte électronique du TDB">
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="project-page-side">
+          <div class="project-info-card">
+            <h4>Résumé rapide</h4>
+            <ul>
+              <li>Client : Baby Corporation</li>
+              <li>Capteur : LM35DZ (10 mV/°C)</li>
+              <li>Alimentation : LiPo 2S 7,4 V — 350 mAh</li>
+              <li>Autonomie : 36,6 h (≥ 24 h ✓)</li>
+              <li>Coût : 6,68 € TTC (≤ 20 € ✓)</li>
+              <li>PCB double face : 100 × 60 mm</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Composants principaux</h4>
+            <ul>
+              <li>LM35DZ — capteur de température</li>
+              <li>MCP6002 — double comparateur</li>
+              <li>74HC02N — porte NOR</li>
+              <li>LM78L05 — régulateur 5 V</li>
+              <li>LED bleue, verte, rouge (3 mm)</li>
+              <li>JS202011 — interrupteur DPDT</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Étapes du projet</h4>
+            <ul>
+              <li>CPR : choix des composants</li>
+              <li>CDT : dimensionnement et simulation ISIS</li>
+              <li>Fabrication : gravure, perçage, soudure</li>
+              <li>DDV : tests fer à souder + étuve</li>
+            </ul>
+          </div>
+          <div class="project-info-card">
+            <h4>Résultats de vérification</h4>
+            <ul>
+              <li>Comparaisons / allumages ✓</li>
+              <li>Seuils ✓ (erreurs &lt; 2 %)</li>
+              <li>Intensités LEDs ✓ (erreurs &lt; 10 %)</li>
+              <li>Autonomie ✓ (36,6 h)</li>
+              <li>Marche / Arrêt ✓</li>
+              <li>Dimensions : trous 3,19 mm (⚠ prévu 4 mm)</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Établissement</h4>
+        <ul>
+          <li>IUT de Bordeaux</li>
+          <li>BUT GEII</li>
+          <li><a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" rel="noreferrer">Site officiel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mentions légales</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Portfolio</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="matieres.html">Matières</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <ul>
+          <li><a href="mailto:kelyann.crime@etu.u-bordeaux.fr">kelyann.crime@etu.u-bordeaux.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/kelyann-crim%C3%A9-219b1539a" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Kelyann CRIME</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
