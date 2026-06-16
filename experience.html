@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expérience | Kelyann CRIME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page-title="Expérience">
+  <div class="background fx-blur"></div>
+  <div class="background fx-grid"></div>
+
+  <header class="hero" id="home">
+    <nav class="nav">
+      <div class="brand">
+        <div class="geii-logo">
+          <img class="logo-img" src="Image/geii-logo.svg" alt="Logo GEII">
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="experience.html" aria-current="page">Expérience</a></li>
+        <li><a href="skills.html">Compétences</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="contact.html">Discuter</a>
+    </nav>
+
+    <div class="hero-grid project-page-hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow xp-eyebrow-mono">// SYSTEM — DOSSIERS CLASSIFIÉS</p>
+        <h1>Mes expériences</h1>
+        <p class="lead">Du terrain à l'international — chaque expérience a construit qui je suis.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="xp-stack">
+
+        <!-- Card EDEIS -->
+        <article class="xp-card-min reveal" data-modal="modal-edeis" role="button" tabindex="0">
+          <div class="xp-photo-slot xp-photo-logos">
+            <img src="Image/logo-edeis.jpg" alt="Logo EDEIS">
+          </div>
+          <div class="xp-card-min-footer">
+            <h3 class="xp-card-min-title">EDEIS — Aéroport Grand-Case</h3>
+            <span class="xp-card-min-hint">Voir le dossier →</span>
+          </div>
+        </article>
+
+        <!-- Card JIMMY T -->
+        <article class="xp-card-min reveal" data-modal="modal-jimmy" role="button" tabindex="0" style="transition-delay:80ms">
+          <div class="xp-photo-slot xp-photo-text">JIMMY T</div>
+          <div class="xp-card-min-footer">
+            <h3 class="xp-card-min-title">Électricien — Réseau d'un magasin</h3>
+            <span class="xp-card-min-hint">Voir le dossier →</span>
+          </div>
+        </article>
+
+        <!-- Card Football -->
+        <article class="xp-card-min reveal" data-modal="modal-foot" role="button" tabindex="0" style="transition-delay:160ms">
+          <div class="xp-photo-slot xp-photo-logos">
+            <img src="Image/logo-martignas-illac.png" alt="FC Martignas-Illac">
+            <img src="Image/logo-saint-martin-foot.jpg" alt="Ligue de Football de Saint-Martin">
+          </div>
+          <div class="xp-card-min-footer">
+            <h3 class="xp-card-min-title">FC Martignas-Illac & Sélection Saint-Martin</h3>
+            <span class="xp-card-min-hint">Voir le dossier →</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== MODALS ===== -->
+
+  <!-- Modal EDEIS -->
+  <div class="xp-modal" id="modal-edeis" aria-hidden="true" aria-modal="true" role="dialog">
+    <div class="xp-modal-backdrop"></div>
+    <div class="xp-modal-box">
+      <button class="xp-modal-close" aria-label="Fermer">✕</button>
+      <div class="xp-photo-slot xp-photo-logos" style="height:180px">
+        <img src="Image/logo-edeis.jpg" alt="Logo EDEIS">
+      </div>
+      <div class="xp-modal-content">
+        <span class="xp-badge">Stage découverte · Déc. 2022 → Jan. 2023</span>
+        <h2>EDEIS — Aéroport Grand-Case</h2>
+        <p class="xp-loc">📍 Aéroport Grand-Case L'Espérance · Saint-Martin</p>
+        <p class="xp-desc">Immersion dans un aéroport régional exploité par <strong>EDEIS</strong> — découverte de tous les services (piste, sûreté, maintenance, admin). Contact direct avec les installations électriques, confirmation de l'attrait pour le génie électrique.</p>
+        <p class="xp-modal-section-label">Compétences acquises</p>
+        <ul class="xp-chips-simple">
+          <li>Autonomie</li>
+          <li>Rigueur</li>
+          <li>Posture professionnelle</li>
+          <li>Environnement multiculturel</li>
+          <li>Organisation</li>
+          <li>Serviabilité</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal JIMMY T -->
+  <div class="xp-modal" id="modal-jimmy" aria-hidden="true" aria-modal="true" role="dialog">
+    <div class="xp-modal-backdrop"></div>
+    <div class="xp-modal-box">
+      <button class="xp-modal-close" aria-label="Fermer">✕</button>
+      <div class="xp-photo-slot xp-photo-text" style="height:180px">JIMMY T</div>
+      <div class="xp-modal-content">
+        <span class="xp-badge">Stage professionnel · Été 2025</span>
+        <h2>Électricien — Réseau d'un magasin</h2>
+        <p class="xp-loc">📍 Saint-Martin · Caraïbes</p>
+        <p class="xp-desc">Création complète du réseau électrique d'un magasin neuf : lecture plans, chemins de câbles, tirage, raccordement tableau, mise en service. Normes <strong>NF C 15-100</strong> appliquées sur chantier réel.</p>
+        <p class="xp-modal-section-label">Compétences acquises</p>
+        <ul class="xp-chips-simple">
+          <li>Lecture de plans & schémas</li>
+          <li>Tirage de câbles</li>
+          <li>Raccordement tableau électrique</li>
+          <li>Normes NF C 15-100</li>
+          <li>Sécurité sur chantier</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Football -->
+  <div class="xp-modal" id="modal-foot" aria-hidden="true" aria-modal="true" role="dialog">
+    <div class="xp-modal-backdrop"></div>
+    <div class="xp-modal-box">
+      <button class="xp-modal-close" aria-label="Fermer">✕</button>
+      <div class="xp-photo-slot xp-photo-logos" style="height:180px">
+        <img src="Image/logo-martignas-illac.png" alt="FC Martignas-Illac">
+        <img src="Image/logo-saint-martin-foot.jpg" alt="Ligue de Football de Saint-Martin">
+      </div>
+      <div class="xp-modal-content">
+        <span class="xp-badge xp-badge-sport">Sport · Football · En cours</span>
+        <h2>FC Martignas-Illac & Sélection Saint-Martin</h2>
+        <p class="xp-loc">📍 Bordeaux · Saint-Martin · International</p>
+        <p class="xp-desc">Sénior <strong>Régional 3</strong> au FC Martignas-Illac. Sélection nationale Saint-Martin U20 & sénior. <strong>Février 2026</strong> — qualifications Coupe du Monde. Le football m'a appris le leadership, la discipline et le dépassement de soi.</p>
+        <p class="xp-modal-section-label">Compétences acquises</p>
+        <ul class="xp-chips-simple xp-chips-sport">
+          <li>Sénior Régional 3</li>
+          <li>Sélection nationale U20</li>
+          <li>Sélection nationale sénior</li>
+          <li>Qualifications Coupe du Monde 2026</li>
+          <li>Leadership</li>
+          <li>Dépassement de soi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Établissement</h4>
+        <ul>
+          <li>IUT de Bordeaux</li>
+          <li>BUT GEII</li>
+          <li><a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" rel="noreferrer">Site officiel</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mentions légales</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Portfolio</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacts</h4>
+        <ul>
+          <li><a href="mailto:kelyann.crime@etu.u-bordeaux.fr">kelyann.crime@etu.u-bordeaux.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/kelyann-crim%C3%A9-219b1539a" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">© 2026 Kelyann CRIME</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    (function () {
+      const cards = document.querySelectorAll('.xp-card-min');
+      const modals = document.querySelectorAll('.xp-modal');
+
+      const openModal = (modal, originEl) => {
+        if (originEl) {
+          const r = originEl.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          modal.querySelector('.xp-modal-box').style.transformOrigin =
+            `${cx}px ${cy}px`;
+        }
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lock-scroll');
+        modal.querySelector('.xp-modal-close')?.focus();
+      };
+
+      const closeModal = (modal) => {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lock-scroll');
+      };
+
+      cards.forEach(card => {
+        const activate = () => {
+          const modal = document.getElementById(card.dataset.modal);
+          if (modal) openModal(modal, card);
+        };
+        card.addEventListener('click', activate);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+        });
+      });
+
+      modals.forEach(modal => {
+        modal.querySelector('.xp-modal-backdrop')?.addEventListener('click', () => closeModal(modal));
+        modal.querySelector('.xp-modal-close')?.addEventListener('click', () => closeModal(modal));
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') modals.forEach(m => m.classList.contains('open') && closeModal(m));
+      });
+    })();
+  </script>
+</body>
+</html>

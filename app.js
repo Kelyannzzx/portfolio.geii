@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("page-enter");
-
-  const revealPageContent = () => {
-    requestAnimationFrame(() => {
-      document.body.classList.add("page-ready");
-    });
-  };
+  const revealPageContent = () => {};
 
   const splash = document.querySelector(".splash");
   if (splash) {
@@ -74,8 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeThemeHub = document.getElementById("home-theme-hub");
   const homeThemeBackdrop = document.querySelector(".home-theme-backdrop");
   const projectLinks = document.querySelectorAll(".project-nav-card");
-  const pageTransition = document.querySelector(".page-transition");
-  const pageTransitionTitle = document.querySelector(".page-transition-title");
   let homePortalState = "closed";
 
   const handleScroll = () => {
@@ -95,10 +87,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.25 }
+    { threshold: 0, rootMargin: "0px 0px -10% 0px" }
   );
 
   reveals.forEach(el => observer.observe(el));
+
+  // Expériences scroll reveal
+  const expItems = document.querySelectorAll(".exp-item");
+  if (expItems.length) {
+    const expObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("exp-visible");
+          else entry.target.classList.remove("exp-visible");
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    expItems.forEach((item, i) => {
+      item.style.transitionDelay = `${i * 100}ms`;
+      expObserver.observe(item);
+    });
+  }
+
+  // Timeline scroll reveal — re-joue à chaque passage
+  const tlItems = document.querySelectorAll(".tl-item");
+  if (tlItems.length) {
+    const tlObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("tl-visible");
+          } else {
+            entry.target.classList.remove("tl-visible");
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    tlItems.forEach((item, i) => {
+      item.style.transitionDelay = `${i * 80}ms`;
+      tlObserver.observe(item);
+    });
+  }
 
   document.querySelectorAll(".btn").forEach(btn => {
     btn.addEventListener("pointerdown", e => {
@@ -281,30 +312,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
   homeThemeBackdrop?.addEventListener("click", closeHomePortal);
 
-  projectLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      const href = link.getAttribute("href");
-      if (!href) return;
-
-      e.preventDefault();
-
-      const title = link.getAttribute("data-project-title") || link.querySelector("h3")?.textContent || "Projet";
-      if (pageTransitionTitle) {
-        pageTransitionTitle.textContent = title;
-      }
-
-      pageTransition?.classList.add("active");
-      document.body.classList.add("lock-scroll");
-
-      window.setTimeout(() => {
-        window.location.href = href;
-      }, 550);
-    });
-  });
-
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && homePortalState === "open") {
       closeHomePortal();
     }
   });
+
+  // Lightbox zoom sur images zoomables
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.innerHTML = `<div class="lightbox-bd"></div><div class="lightbox-box"><img class="lightbox-img" src="" alt=""><button class="lightbox-cl" aria-label="Fermer">✕</button></div>`;
+  document.body.appendChild(lightbox);
+  const lbImg = lightbox.querySelector(".lightbox-img");
+  const closeLb = () => { lightbox.classList.remove("open"); document.body.classList.remove("lock-scroll"); };
+  lightbox.querySelector(".lightbox-bd").addEventListener("click", closeLb);
+  lightbox.querySelector(".lightbox-cl").addEventListener("click", closeLb);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeLb(); });
+
+  document.querySelectorAll(".proj-zoomable").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add("open");
+      document.body.classList.add("lock-scroll");
+    });
+  });
+
+  // Bascule thème clair / sombre (persisté)
+  const root = document.documentElement;
+  const themeBtn = document.createElement("button");
+  themeBtn.className = "theme-toggle";
+  themeBtn.type = "button";
+  themeBtn.setAttribute("aria-label", "Basculer le mode sombre");
+  const syncThemeBtn = () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    themeBtn.textContent = dark ? "☀" : "☾";
+    themeBtn.title = dark ? "Passer en mode clair" : "Passer en mode sombre";
+  };
+  syncThemeBtn();
+  themeBtn.addEventListener("click", () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    if (dark) root.removeAttribute("data-theme");
+    else root.setAttribute("data-theme", "dark");
+    try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (e) {}
+    syncThemeBtn();
+  });
+  document.body.appendChild(themeBtn);
+
+  // Menu mobile (burger)
+  const navEl = document.querySelector(".nav");
+  const navLinksEl = navEl?.querySelector(".nav-links");
+  if (navEl && navLinksEl) {
+    const burger = document.createElement("button");
+    burger.className = "nav-burger";
+    burger.type = "button";
+    burger.setAttribute("aria-label", "Ouvrir le menu");
+    burger.setAttribute("aria-expanded", "false");
+    burger.innerHTML = "<span></span>";
+    navEl.insertBefore(burger, navLinksEl);
+    burger.addEventListener("click", () => {
+      const open = navEl.classList.toggle("nav-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    });
+    navLinksEl.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        navEl.classList.remove("nav-open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 });

@@ -2,21 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil | Kelyann CRIME</title>
+  <title>Kelyann CRIME — Portfolio BUT GEII</title>
+  <meta name="description" content="Portfolio de Kelyann CRIME — étudiant BUT GEII à l'IUT de Bordeaux.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="home-landing" data-page-title="Accueil">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-title">Accueil</div>
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
-
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -27,16 +23,21 @@
           <img class="logo-img" src="Image/geii-logo.svg" alt="Logo GEII">
         </div>
       </div>
+      <span class="home-avail-badge">
+        <span class="availability-dot"></span>
+        Disponible — alternance / stage 2026
+      </span>
     </div>
 
     <div class="hero-grid home-landing-grid">
       <div class="home-intro-card home-portal-trigger reveal" role="button" tabindex="0" aria-controls="home-theme-hub" aria-expanded="false">
+        <p class="home-kicker">BUT GEII · IUT de Bordeaux</p>
         <h1 class="home-name">
           <span class="home-name-part">Kelyann</span>
           <span class="home-name-part">CRIME</span>
         </h1>
-        <p class="home-landing-subtitle">Bienvenue dans mon portfolio</p>
-        <p class="home-landing-hint">Touchpoint central vers les pages du portfolio</p>
+        <p class="home-landing-subtitle">Conception électronique · Systèmes embarqués</p>
+        <p class="home-landing-hint">Explorer le portfolio →</p>
       </div>
     </div>
   </header>
@@ -45,32 +46,32 @@
     <button class="home-theme-backdrop" type="button" aria-label="Fermer la navigation thématique"></button>
     <div class="home-theme-panel">
       <p class="home-theme-kicker">Navigation</p>
-      <h2>Choisir un thème</h2>
+      <h2>Choisir une section</h2>
       <div class="home-theme-grid">
-        <a class="home-theme-link" href="about.html">
+        <a class="home-theme-link" href="about.html" data-page-link data-page-title="À propos">
           <span class="home-theme-link-index">01</span>
           <span class="home-theme-link-title">À propos</span>
-          <span class="home-theme-link-copy">Présentation, parcours et objectifs.</span>
+          <span class="home-theme-link-copy">Parcours, valeurs, frise chronologique.</span>
         </a>
-        <a class="home-theme-link" href="skills.html">
+        <a class="home-theme-link" href="experience.html" data-page-link data-page-title="Expérience">
           <span class="home-theme-link-index">02</span>
+          <span class="home-theme-link-title">Expérience</span>
+          <span class="home-theme-link-copy">Stages EDEIS, sport haut niveau.</span>
+        </a>
+        <a class="home-theme-link" href="skills.html" data-page-link data-page-title="Compétences">
+          <span class="home-theme-link-index">03</span>
           <span class="home-theme-link-title">Compétences</span>
           <span class="home-theme-link-copy">Domaines techniques et savoir-faire.</span>
         </a>
-        <a class="home-theme-link" href="matieres.html">
-          <span class="home-theme-link-index">03</span>
-          <span class="home-theme-link-title">Matières</span>
-          <span class="home-theme-link-copy">Enseignements suivis en BUT GEII.</span>
-        </a>
-        <a class="home-theme-link" href="projects.html">
+        <a class="home-theme-link" href="projects.html" data-page-link data-page-title="Projets">
           <span class="home-theme-link-index">04</span>
           <span class="home-theme-link-title">Projets</span>
-          <span class="home-theme-link-copy">Réalisations et démonstrations concrètes.</span>
+          <span class="home-theme-link-copy">Rafale miniature, KAH, thermomètre.</span>
         </a>
-        <a class="home-theme-link" href="contact.html">
+        <a class="home-theme-link" href="contact.html" data-page-link data-page-title="Contact">
           <span class="home-theme-link-index">05</span>
           <span class="home-theme-link-title">Contact</span>
-          <span class="home-theme-link-copy">Coordonnées et localisation.</span>
+          <span class="home-theme-link-copy">Email, LinkedIn, localisation.</span>
         </a>
       </div>
     </div>
@@ -89,17 +90,17 @@
       <div>
         <h4>Mentions légales</h4>
         <ul>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="mentions-legales.html" data-page-link data-page-title="Mentions légales">Mentions légales</a></li>
+          <li><a href="confidentialite.html" data-page-link data-page-title="Confidentialité">Confidentialité</a></li>
         </ul>
       </div>
       <div>
         <h4>Portfolio</h4>
         <ul>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="projects.html">Projets</a></li>
-          <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
+          <li><a href="about.html" data-page-link data-page-title="À propos">À propos</a></li>
+          <li><a href="experience.html" data-page-link data-page-title="Expérience">Expérience</a></li>
+          <li><a href="projects.html" data-page-link data-page-title="Projets">Projets</a></li>
+          <li><a href="skills.html" data-page-link data-page-title="Compétences">Compétences</a></li>
         </ul>
       </div>
       <div>
@@ -110,7 +111,7 @@
         </ul>
       </div>
     </div>
-    <p class="footer-note">© 2026 Kelyann CRIME</p>
+    <p class="footer-note">© 2026 Kelyann CRIME · Tous droits réservés</p>
   </footer>
 
   <script src="app.js"></script>

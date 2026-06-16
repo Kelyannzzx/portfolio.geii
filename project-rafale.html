@@ -2,19 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Rafale | Kelyann CRIME</title>
+  <title>Projet SLR | Kelyann CRIME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page-title="Projet Rafale">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
+<body data-page-title="Projet SLR">
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -27,72 +24,222 @@
       </div>
       <ul class="nav-links">
         <li><a href="about.html">À propos</a></li>
+        <li><a href="experience.html">Expérience</a></li>
         <li><a href="skills.html">Compétences</a></li>
-        <li><a href="matieres.html">Matières</a></li>
         <li><a href="projects.html" aria-current="page">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="nav-cta" href="projects.html">Retour projets</a>
+      <a class="nav-cta" href="projects.html">← Projets</a>
     </nav>
 
     <div class="hero-grid project-page-hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Projet détaillé</p>
-        <h1>système lumineux pour rafale miniature</h1>
-        <p class="lead">Concevoir un circuit imprimé (PCB) répondant aux exigences d'un cahier des charges client (Toy Corporation) pour piloter des effets sonores et lumineux.</p>
+        <p class="eyebrow">SAE · Semestre 1 · Toy Corporation · EQ01</p>
+        <h1>Système Lumineux pour Rafale miniature</h1>
+        <p class="lead">Conception et fabrication de la carte Lumière : trois LEDs pilotées par un NE555 en astable, sur PCB simple face réalisé intégralement à l'IUT.</p>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section reveal">
+    <section class="section">
+
+      <!-- Image héro -->
+      <div class="proj-hero-img reveal">
+        <img src="Image/slr-render-3d.png" alt="Rendu 3D SolidWorks — Rafale miniature SLR EQ01" class="proj-zoomable">
+      </div>
+
+      <!-- Stats bar -->
+      <div class="proj-stats reveal">
+        <div class="proj-stat">
+          <span class="proj-stat-num">3</span>
+          <span class="proj-stat-label">LEDs</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">NE555</span>
+          <span class="proj-stat-label">Composant clé</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">5 V</span>
+          <span class="proj-stat-label">Alimentation</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">✓</span>
+          <span class="proj-stat-label">Conforme DDV</span>
+        </div>
+      </div>
+
+      <!-- Layout principal -->
       <div class="project-page-layout">
         <div class="project-page-main">
-          <div class="project-media-slot giant">
-            <span>Grande photo d'ouverture du projet</span>
+
+          <!-- Présentation -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Présentation du projet</h2>
+            <p>Le projet SLR est une SAE réalisée pour <strong>Toy Corporation</strong>, encadrée par F. AUGEREAU. En équipe EQ01, j'ai occupé le rôle de <strong>technicien rédacteur</strong> et conçu la <strong>carte Lumière</strong> — une carte PCB simple face pilotant trois LEDs pour simuler les feux de navigation d'un Rafale miniature.</p>
+            <p>L'objectif : une <strong>LED jaune clignotante</strong> (feu de navigation, période 1,9 s / temps actif 100 ms) et deux LEDs <strong>rouge et verte</strong> en continu (feux d'extrémité d'aile), toutes à 500 mCd.</p>
           </div>
 
-          <div class="project-section-card">
-            <h2>Présentation générale</h2>
-            <p>Tu peux raconter ici le but du projet, le contexte, le besoin initial et le résultat attendu.</p>
+          <!-- Technique -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Développement technique</h2>
+
+            <div class="proj-specs-grid">
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Clignotement</span>
+                <span class="proj-spec-val">NE555 astable — R1 22 kΩ · R2 1,5 kΩ · C1 100 µF</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">LED rouge</span>
+                <span class="proj-spec-val">Continue — R5 = 1 kΩ</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">LED verte</span>
+                <span class="proj-spec-val">Continue — R6 = 2,2 kΩ</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Découplage</span>
+                <span class="proj-spec-val">C2 = 10 nF (broche 5) · C3 = 10 µF (alim)</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Connectique</span>
+                <span class="proj-spec-val">6 connecteurs HE14 2,54 mm 2 broches</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">PCB</span>
+                <span class="proj-spec-val">Simple face — gravure oxydoréduction · perçage Ø 0,8–1,5 mm</span>
+              </div>
+            </div>
           </div>
 
-          <div class="project-gallery-grid">
-            <div class="project-media-slot"><span>Photo de la maquette</span></div>
-            <div class="project-media-slot"><span>Photo du montage</span></div>
-            <div class="project-media-slot"><span>Photo de la carte électronique</span></div>
+          <!-- Schémas -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Schémas & fabrication</h2>
+            <div class="proj-gallery-2">
+              <div class="proj-gallery-item">
+                <img src="Image/Image SLR/schema electrique SLR .png" alt="Schéma électrique ISIS — carte Lumière SLR" class="proj-zoomable">
+                <span>Schéma électrique (ISIS)</span>
+              </div>
+              <div class="proj-gallery-item">
+                <img src="Image/Image SLR/Liste composants SLR.png" alt="Liste des composants — carte Lumière SLR" class="proj-zoomable">
+                <span>Liste des composants</span>
+              </div>
+            </div>
+            <p class="proj-note">Diamètres de perçage : 0,8 mm (résistances) · 1,2 mm (NE555) · 1,5 mm (connecteurs)</p>
+            <div class="proj-files-row" style="margin-top:1rem">
+              <a class="proj-file-chip" href="SAE SLR-2/LUMIERE_SMD.pdf" target="_blank" rel="noreferrer">
+                <span class="proj-file-icon">📄</span>
+                <span class="proj-file-name">Dossier complet</span>
+                <span class="proj-file-ref">LUMIERE_SMD.pdf</span>
+              </a>
+            </div>
           </div>
 
-          <div class="project-section-card">
-            <h2>Développement technique</h2>
-            <p>Ici tu pourras détailler les choix de composants, la logique de programmation, l'alimentation, les tests et les difficultés rencontrées.</p>
+          <!-- Vérifications -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Vérification du produit (DDV)</h2>
+            <div class="proj-results-list">
+              <div class="proj-result proj-result-ok">
+                <div class="proj-result-head">
+                  <span class="proj-result-badge">✓ Conforme</span>
+                  <strong>Essai 1 — Clignotement LED jaune</strong>
+                </div>
+                <p>Période mesurée : <strong>2,12 s</strong> (attendu 1,9 s · écart 12 % · tolérance ±20 %)</p>
+                <p>Temps actif mesuré : <strong>104 ms</strong> (attendu 100 ms · écart 4 % · tolérance ±20 %)</p>
+              </div>
+              <div class="proj-result proj-result-ok">
+                <div class="proj-result-head">
+                  <span class="proj-result-badge">✓ Conforme</span>
+                  <strong>Essai 2 — Intensités lumineuses</strong>
+                </div>
+                <p>Les trois LEDs (jaune, rouge, verte) vérifiées à <strong>500 mCd ±50 %</strong> via mesure de tension et calcul de courant.</p>
+              </div>
+              <div class="proj-result proj-result-ok">
+                <div class="proj-result-head">
+                  <span class="proj-result-badge">✓ Conforme</span>
+                  <strong>Vérification visuelle</strong>
+                </div>
+                <p>Sous 5 V (courant &lt; 1 mA) : LED jaune clignote · LEDs rouge et verte allumées en continu.</p>
+              </div>
+            </div>
+
+            <p class="proj-note" style="margin-top:1.25rem">Mesures réalisées sur banc — alimentation de table et oscilloscope Tektronix TBS 1052B-EDU.</p>
+            <div class="proj-gallery-3">
+              <div class="proj-gallery-item">
+                <img src="Image/Image SLR/slr-ddv-banc.jpg" alt="Carte Son & Lumière sous alimentation 5 V — vérification N°1" class="proj-zoomable">
+                <span>Essai sous alimentation 5 V</span>
+              </div>
+              <div class="proj-gallery-item">
+                <img src="Image/Image SLR/slr-ddv-periode.jpg" alt="Mesure de la période du clignotement à l'oscilloscope — 2,12 s" class="proj-zoomable">
+                <span>Période — 2,12 s à l'oscilloscope</span>
+              </div>
+              <div class="proj-gallery-item">
+                <img src="Image/Image SLR/slr-ddv-tempsactif.jpg" alt="Mesure du temps actif du clignotement à l'oscilloscope — 104 ms" class="proj-zoomable">
+                <span>Temps actif — 104 ms à l'oscilloscope</span>
+              </div>
+            </div>
+
+            <div class="proj-files-row" style="margin-top:1rem">
+              <a class="proj-file-chip" href="SAE SLR-2/SLR_LUMIERE_DDV_EQ01.docx" download>
+                <span class="proj-file-icon">📄</span>
+                <span class="proj-file-name">Dossier de vérification</span>
+                <span class="proj-file-ref">SLR_LUMIERE_DDV_EQ01.docx</span>
+              </a>
+            </div>
           </div>
 
-          <div class="project-doc-grid">
-            <div class="project-doc-slot">Emplacement schéma électrique</div>
-            <div class="project-doc-slot">Emplacement rapport ou document PDF</div>
-          </div>
         </div>
 
+        <!-- Sidebar -->
         <aside class="project-page-side">
-          <div class="project-info-card">
-            <h4>Résumé rapide</h4>
-            <ul>
-              <li>Objectif du projet</li>
-              <li>Compétences mobilisées</li>
-              <li>Matériel utilisé</li>
-              <li>Résultat final</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Infos projet</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Client</span><strong>Toy Corporation</strong></div>
+              <div class="proj-side-item"><span>Équipe</span><strong>EQ01 · GEII Bordeaux</strong></div>
+              <div class="proj-side-item"><span>Rôle</span><strong>Technicien rédacteur</strong></div>
+              <div class="proj-side-item"><span>Carte</span><strong>Lumière (PCB simple face)</strong></div>
+              <div class="proj-side-item"><span>Statut</span><strong class="proj-ok">Conforme ✓</strong></div>
+            </div>
           </div>
-          <div class="project-info-card">
-            <h4>Étapes à détailler</h4>
-            <ul>
-              <li>Analyse du besoin</li>
-              <li>Conception du système</li>
-              <li>Implantation et tests</li>
-              <li>Améliorations possibles</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Composants principaux</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Timer</span><strong>NE555 DIP8</strong></div>
+              <div class="proj-side-item"><span>R1 / R2</span><strong>22 kΩ / 1,5 kΩ</strong></div>
+              <div class="proj-side-item"><span>R4 / R5 / R6</span><strong>4,7 kΩ / 1 kΩ / 2,2 kΩ</strong></div>
+              <div class="proj-side-item"><span>C1 / C2 / C3</span><strong>100 µF / 10 nF / 10 µF</strong></div>
+              <div class="proj-side-item"><span>LEDs</span><strong>Jaune · Rouge · Verte</strong></div>
+              <div class="proj-side-item"><span>Connecteurs</span><strong>6 × HE14 2,54 mm</strong></div>
+            </div>
           </div>
+
+          <div class="proj-side-card reveal">
+            <h4>Spécifications cibles</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Période</span><strong>1,9 s ±20 %</strong></div>
+              <div class="proj-side-item"><span>Temps actif</span><strong>100 ms ±20 %</strong></div>
+              <div class="proj-side-item"><span>Intensité</span><strong>500 mCd ±50 %</strong></div>
+              <div class="proj-side-item"><span>Alimentation</span><strong>5 V &lt; 1 mA</strong></div>
+            </div>
+          </div>
+
+          <div class="proj-side-card reveal">
+            <h4>Étapes clés</h4>
+            <div class="proj-steps">
+              <div class="proj-step proj-step-done">Analyse CDC (Toy Corporation)</div>
+              <div class="proj-step proj-step-done">DDC — conception & simulation</div>
+              <div class="proj-step proj-step-done">DDF — fabrication PCB & soudure</div>
+              <div class="proj-step proj-step-done">DDV — tests & vérifications</div>
+              <div class="proj-step proj-step-done">Livraison client</div>
+            </div>
+          </div>
+
         </aside>
       </div>
     </section>
@@ -119,10 +266,10 @@
         <h4>Portfolio</h4>
         <ul>
           <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
           <li><a href="projects.html">Projets</a></li>
           <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
-        </ul>
+          </ul>
       </div>
       <div>
         <h4>Contacts</h4>
@@ -132,7 +279,6 @@
         </ul>
       </div>
     </div>
-    <p class="footer-note">© 2026 Kelyann CRIME</p>
   </footer>
 
   <script src="app.js"></script>

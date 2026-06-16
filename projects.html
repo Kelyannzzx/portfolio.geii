@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projets | Kelyann CRIME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,12 +12,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page-title="Projets">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-title">Projets</div>
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -28,8 +24,8 @@
       </div>
       <ul class="nav-links">
         <li><a href="about.html">À propos</a></li>
+        <li><a href="experience.html">Expérience</a></li>
         <li><a href="skills.html">Compétences</a></li>
-        <li><a href="matieres.html">Matières</a></li>
         <li><a href="projects.html" aria-current="page">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -38,27 +34,45 @@
 
     <div class="hero-grid project-hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Projets</p>
+        <p class="eyebrow xp-eyebrow-mono">// PROJETS — SAE GEII</p>
         <h1>Choisir un projet à explorer</h1>
-        <p class="lead">Clique sur une carte pour lancer la transition et descendre directement vers la présentation complète du projet.</p>
+        <p class="lead">De l'idée au prototype — des projets concrets qui allient électronique, embarqué et travail d'équipe.</p>
       </div>
     </div>
   </header>
 
   <main>
     <section class="section reveal" id="projects">
-      <div class="project-selector-grid">
-        <a class="project-link-card interactive-card project-nav-card" href="project-rafale.html" data-project-title="système lumineux pour rafale miniature">
-          <span class="project-link-tag">système lumineux pour rafale miniature</span>
-          <p>Séquences de feux, alimentation et intégration sur maquette.</p>
+      <div class="project-stack">
+        <a class="project-link-card interactive-card project-nav-card" href="project-rafale.html" data-project-title="Système Lumineux pour Rafale miniature (SLR)">
+          <div class="project-card-img">
+            <img src="Image/slr-render-3d.png" alt="SLR Lumière">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-semester">Semestre 1</span>
+            <span class="project-link-tag">Système Lumineux pour Rafale miniature (SLR)</span>
+            <p>Séquences de feux, alimentation et intégration sur maquette.</p>
+          </div>
+        </a>
+        <a class="project-link-card interactive-card project-nav-card" href="project-thermometre.html" data-project-title="Thermomètre de Bain pour bébé (TDB)">
+          <div class="project-card-img">
+            <img src="Image/carte-tdb.png" alt="Thermomètre TDB">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-semester">Semestre 1</span>
+            <span class="project-link-tag">Thermomètre de Bain pour bébé (TDB)</span>
+            <p>Mesure, sécurité, signalisation et usage quotidien.</p>
+          </div>
         </a>
         <a class="project-link-card interactive-card project-nav-card" href="project-kah.html" data-project-title="Kart à Hélice (KAH)">
-          <span class="project-link-tag alt">Kart à Hélice (KAH)</span>
-          <p>Contrôle infrarouge NEC du kart et gestion de moteur, direction et klaxon.</p>
-        </a>
-        <a class="project-link-card interactive-card project-nav-card" href="project-thermometre.html" data-project-title="thermomètre de bain pour bébé">
-          <span class="project-link-tag alt">thermomètre de bain pour bébé</span>
-          <p>Mesure, sécurité, signalisation et usage quotidien.</p>
+          <div class="project-card-img">
+            <img src="Image/kah-render-3d.png" alt="Kart à Hélice">
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-semester">Semestre 2</span>
+            <span class="project-link-tag">Kart à Hélice (KAH)</span>
+            <p>Contrôle infrarouge NEC du kart et gestion de moteur, direction et klaxon.</p>
+          </div>
         </a>
       </div>
     </section>
@@ -92,9 +106,9 @@
         <h4>Portfolio</h4>
         <ul>
           <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
           <li><a href="projects.html">Projets</a></li>
           <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
         </ul>
       </div>
       <div>

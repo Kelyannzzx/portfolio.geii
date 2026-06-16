@@ -2,19 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projet KAH | Kelyann CRIME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page-title="Projet KAH">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -27,178 +24,280 @@
       </div>
       <ul class="nav-links">
         <li><a href="about.html">À propos</a></li>
+        <li><a href="experience.html">Expérience</a></li>
         <li><a href="skills.html">Compétences</a></li>
-        <li><a href="matieres.html">Matières</a></li>
         <li><a href="projects.html" aria-current="page">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a class="nav-cta" href="projects.html">Retour projets</a>
+      <a class="nav-cta" href="projects.html">← Projets</a>
     </nav>
-
     <div class="hero-grid project-page-hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Projet détaillé · SAE · Équipe 22</p>
+        <p class="eyebrow">SAE · Semestre 2 · WATT'KART · EQ22</p>
         <h1>Kart à Hélice (KAH)</h1>
-        <p class="lead">Concevoir et programmer une télécommande infrarouge (émetteur) et son récepteur embarqué sur un kart propulsé par hélice : vitesse, direction et klaxon transmis en temps réel via le protocole NEC.</p>
+        <p class="lead">Programmer une télécommande infrarouge et son récepteur embarqué sur un kart propulsé par hélice — vitesse, direction et klaxon transmis sans fil en temps réel.</p>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section reveal">
+    <section class="section">
+
+      <div class="proj-hero-img reveal">
+        <img src="Image/kah-render-3d.png" alt="Rendu 3D du kart à hélice WATT'KART" class="proj-zoomable">
+      </div>
+
+      <!-- Stats -->
+      <div class="proj-stats reveal">
+        <div class="proj-stat">
+          <span class="proj-stat-num">8</span>
+          <span class="proj-stat-label">Niveaux de vitesse</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">32</span>
+          <span class="proj-stat-label">Positions direction</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">333 ms</span>
+          <span class="proj-stat-label">Rafraîchissement max</span>
+        </div>
+        <div class="proj-stat-div"></div>
+        <div class="proj-stat">
+          <span class="proj-stat-num">IR</span>
+          <span class="proj-stat-label">Communication</span>
+        </div>
+      </div>
+
       <div class="project-page-layout">
         <div class="project-page-main">
 
-          <!-- Photo principale : rendu 3D du kart -->
-          <div class="project-media-slot giant photo">
-            <img src="Image/kah-render-3d.png" alt="Rendu 3D SolidWorks du kart à hélice WATT'KART">
+          <!-- Présentation -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Présentation du projet</h2>
+            <div class="proj-img-block" style="max-height:200px">
+              <img src="Image/photo KAH/kah-logo-wattkart.jpg" alt="Logo WATT'KART" class="proj-zoomable" style="object-fit:contain;background:#f6f8fc">
+            </div>
+            <p>Projet réalisé en équipe 22 à l'IUT GEII de Bordeaux. L'objectif : programmer un système de pilotage sans fil complet pour un kart propulsé par hélice — le projet WATT'KART.</p>
+            <p>Le système fonctionne comme une vraie télécommande : on tient un boîtier en main (l'<strong>émetteur</strong>), on tourne deux molettes et on appuie sur un bouton. Le kart (le <strong>récepteur</strong>) capte les ordres via un signal <button class="proj-explain" data-explain="infrarouge">infrarouge ⓘ</button> et réagit immédiatement.</p>
           </div>
 
-          <!-- Présentation générale -->
-          <div class="project-section-card">
-            <h2>Présentation générale</h2>
-            <p>
-              Le projet KAH (Kart À Hélice) est une SAE réalisée par l'équipe 22. L'objectif : concevoir un système de pilotage infrarouge complet pour un kart propulsé par hélice. Le système se compose de deux parties indépendantes programmées sur Arduino.
-            </p>
-            <br>
-            <p>
-              L'<strong>émetteur</strong> (télécommande) lit en permanence deux potentiomètres (vitesse et direction) ainsi qu'un bouton klaxon, encode ces données dans une trame <strong>NEC infrarouge</strong> et les envoie toutes les 333 ms ou immédiatement à chaque changement.
-            </p>
-            <br>
-            <p>
-              Le <strong>récepteur</strong>, embarqué sur le kart, décode la trame NEC reçue, vérifie le numéro d'équipe, puis pilote le <strong>moteur brushless</strong> (propulsion), le <strong>servomoteur</strong> (direction) et le <strong>buzzer</strong> (klaxon). Une LED bleue confirme la réception d'une trame valide ; une LED verte signale que l'Arduino est sous tension.
-            </p>
-          </div>
-
-          <!-- Galerie -->
-          <div class="project-gallery-grid">
-            <div class="project-media-slot photo">
-              <img src="Image/kah-logo-wattkart.jpg" alt="Logo officiel WATT'KART — projet GEII IUT Bordeaux">
-            </div>
-            <div class="project-media-slot">
-              <span>Photo de l'émetteur (télécommande)</span>
-            </div>
-            <div class="project-media-slot">
-              <span>Photo du récepteur sur le kart</span>
+          <!-- Synoptique -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Architecture du système</h2>
+            <p>Le synoptique montre comment les deux modules — émetteur et récepteur — communiquent via infrarouge et pilotent les actionneurs du kart.</p>
+            <div class="proj-img-block">
+              <img src="Image/photo KAH/synoptique KAH.png" alt="Synoptique du système KAH" class="proj-zoomable">
             </div>
           </div>
 
-          <!-- Développement technique -->
-          <div class="project-section-card">
-            <h2>Développement technique</h2>
-            <p>
-              <strong>Protocole NEC :</strong> La trame NEC transporte un octet d'adresse et un octet de données. L'adresse encode le klaxon (bit 7) et le numéro d'équipe sur 7 bits (0x22). Les données encodent la vitesse sur 3 bits (bits 2–0, valeurs 0–7) et la direction sur 5 bits (bits 7–3, valeurs 0–31).<br><br>
-              <strong>Émetteur (KAH_EMTT_EQ22) :</strong> Deux potentiomètres (A0 = vitesse, A1 = direction) sont lus et mappés en 0–7 et 0–31. Un bouton poussoir (pin 2, pull-up interne) détecte le klaxon. La LED infrarouge (pin 5) émet la trame via la bibliothèque NEC. L'envoi a lieu toutes les 333 ms ou dès qu'une valeur change, pour un contrôle réactif.<br><br>
-              <strong>Récepteur (KAH_RCPT_EQ22) :</strong> Le récepteur IR (pin 11) capte les trames. Après vérification du numéro d'équipe (0x16 dans ce binôme), la direction est convertie en angle servomoteur (0–180°) et la vitesse en signal PWM pour le moteur brushless (0–180). Le buzzer (pin 10) génère un signal carré à 4 kHz lors du klaxon. En cas de trame invalide, le moteur est stoppé et la LED bleue s'éteint.
-            </p>
+          <!-- Comment ça marche -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Comment ça fonctionne ?</h2>
+
+            <div class="proj-flow">
+              <div class="proj-flow-step">
+                <span class="proj-flow-num">1</span>
+                <div>
+                  <strong>L'émetteur lit les commandes</strong>
+                  <p>Deux molettes (vitesse et direction) + un bouton klaxon. L'Arduino <button class="proj-explain-inline" data-explain="arduino">ⓘ</button> lit ces valeurs et les prépare à envoyer.</p>
+                </div>
+              </div>
+              <div class="proj-flow-step">
+                <span class="proj-flow-num">2</span>
+                <div>
+                  <strong>Envoi en infrarouge</strong>
+                  <p>Les données sont encodées dans une trame NEC <button class="proj-explain-inline" data-explain="nec">ⓘ</button> et envoyées via une LED infrarouge — invisible à l'œil nu, comme une télécommande de TV.</p>
+                </div>
+              </div>
+              <div class="proj-flow-step">
+                <span class="proj-flow-num">3</span>
+                <div>
+                  <strong>Le récepteur décode et agit</strong>
+                  <p>L'Arduino embarqué sur le kart capte le signal, vérifie qu'il vient bien de notre équipe (numéro 22), puis pilote le moteur brushless <button class="proj-explain-inline" data-explain="brushless">ⓘ</button>, le servomoteur <button class="proj-explain-inline" data-explain="servo">ⓘ</button> et le buzzer.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Diagramme d'architecture -->
-          <div class="project-doc-grid">
-            <div class="project-doc-slot">Schéma de câblage émetteur (depuis Drive)</div>
-            <div class="project-doc-slot">Schéma de câblage récepteur (depuis Drive)</div>
+          <!-- Technique -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Détails techniques</h2>
+            <div class="proj-specs-grid">
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Protocole <button class="proj-explain-inline" data-explain="nec">ⓘ</button></span>
+                <span class="proj-spec-val">NEC infrarouge — adresse + données</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Vitesse</span>
+                <span class="proj-spec-val">3 bits — 8 niveaux (0 à 7)</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Direction</span>
+                <span class="proj-spec-val">5 bits — 32 positions (0 à 31)</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Klaxon</span>
+                <span class="proj-spec-val">Buzzer 4 kHz — bit 7 de l'adresse</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Envoi auto</span>
+                <span class="proj-spec-val">Toutes les 333 ms ou dès un changement</span>
+              </div>
+              <div class="proj-spec-item">
+                <span class="proj-spec-label">Sécurité</span>
+                <span class="proj-spec-val">Vérification du numéro d'équipe — trame invalide = stop moteur</span>
+              </div>
+            </div>
           </div>
 
-          <!-- Extrait code -->
-          <div class="project-section-card">
-            <h2>Architecture logicielle</h2>
-            <p>
-              Le code est structuré en couches fonctionnelles distinctes pour chaque Arduino :<br><br>
-              <strong>Émetteur :</strong> <code>AcquerirPotentiometre()</code> → <code>AcquerirBoutonKlaxon()</code> → <code>CalculerDonneeNEC()</code> + <code>CalculerAdresseNEC()</code> → <code>GenererTrameNEC()</code><br><br>
-              <strong>Récepteur :</strong> <code>AcquerirTrameNEC()</code> → <code>Securite()</code> + <code>ExtraireNumeroEquipe()</code> → <code>CalculerDirectionServomoteur()</code> + <code>CalculerVitesseMoteur()</code> + <code>ExtraireEtatBuzzer()</code> → <code>PiloterServomoteur()</code> + <code>PiloterMoteur()</code> + <code>PiloterBuzzer()</code><br><br>
-              Cette organisation — acquisition, traitement, action — garantit la lisibilité et facilite la maintenance du code embarqué.
-            </p>
+          <!-- Schémas & carte -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Schéma électrique & carte</h2>
+            <p>Le schéma électrique détaille les connexions entre les composants. La carte montre le circuit imprimé assemblé.</p>
+            <div class="proj-gallery-2">
+              <div class="proj-gallery-item">
+                <img src="Image/photo KAH/schema electrique KAH.png" alt="Schéma électrique KAH" class="proj-zoomable">
+                <span>Schéma électrique</span>
+              </div>
+              <div class="proj-gallery-item">
+                <img src="Image/photo KAH/CARTE KAH.png" alt="Carte électronique KAH" class="proj-zoomable">
+                <span>Carte électronique assemblée</span>
+              </div>
+            </div>
+            <div class="proj-img-block" style="margin-top:12px">
+              <img src="Image/photo KAH/Atmega KAH.png" alt="Microcontrôleur ATmega KAH" class="proj-zoomable">
+            </div>
+          </div>
+
+          <!-- Architecture logicielle -->
+          <div class="proj-card reveal">
+            <h2 class="proj-card-title">Organisation du code</h2>
+            <p>Le code des deux Arduinos <button class="proj-explain-inline" data-explain="arduino">ⓘ</button> suit la même logique en 3 étapes — <strong>Acquérir</strong>, <strong>Traiter</strong>, <strong>Agir</strong> — pour que le code soit lisible et facile à modifier.</p>
+            <div class="proj-img-block">
+              <img src="Image/photo KAH/Synoptique informatique.png" alt="Synoptique informatique KAH" class="proj-zoomable">
+            </div>
+
+            <div class="proj-code-flow">
+              <div class="proj-code-col">
+                <div class="proj-code-label">📡 Émetteur (télécommande)</div>
+                <div class="proj-code-step">Lire les molettes</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Lire le bouton klaxon</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Calculer la trame NEC</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Envoyer en infrarouge</div>
+              </div>
+              <div class="proj-code-col">
+                <div class="proj-code-label">🚗 Récepteur (kart)</div>
+                <div class="proj-code-step">Capter le signal infrarouge</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Vérifier l'équipe (n°22)</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Calculer vitesse & direction</div>
+                <div class="proj-code-arrow">↓</div>
+                <div class="proj-code-step">Piloter moteur, servo, buzzer</div>
+              </div>
+            </div>
           </div>
 
         </div>
 
         <!-- Sidebar -->
         <aside class="project-page-side">
-          <div class="project-info-card">
-            <h4>Résumé rapide</h4>
-            <ul>
-              <li>Équipe : EQ22 (IUT Bordeaux GEII)</li>
-              <li>Communication : protocole NEC infrarouge</li>
-              <li>Vitesse : 8 niveaux (3 bits, 0–7)</li>
-              <li>Direction : 32 positions (5 bits, 0–31)</li>
-              <li>Taux de rafraîchissement : 333 ms max</li>
-              <li>Klaxon : buzzer 4 kHz</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Infos projet</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Projet</span><strong>WATT'KART</strong></div>
+              <div class="proj-side-item"><span>Équipe</span><strong>EQ22 · GEII Bordeaux</strong></div>
+              <div class="proj-side-item"><span>Semestre</span><strong>Semestre 2</strong></div>
+              <div class="proj-side-item"><span>Langage</span><strong>C++ (Arduino)</strong></div>
+              <div class="proj-side-item"><span>Communication</span><strong>Infrarouge NEC</strong></div>
+            </div>
           </div>
-          <div class="project-info-card">
-            <h4>Composants émetteur</h4>
-            <ul>
-              <li>Arduino (MCU)</li>
-              <li>2 potentiomètres (vitesse + direction)</li>
-              <li>Bouton poussoir (klaxon)</li>
-              <li>LED infrarouge (pin 5)</li>
-              <li>Bibliothèque NEC maison</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Émetteur (télécommande)</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Cerveau</span><strong>Arduino</strong></div>
+              <div class="proj-side-item"><span>Vitesse</span><strong>Molette (A0)</strong></div>
+              <div class="proj-side-item"><span>Direction</span><strong>Molette (A1)</strong></div>
+              <div class="proj-side-item"><span>Klaxon</span><strong>Bouton poussoir</strong></div>
+              <div class="proj-side-item"><span>Envoi</span><strong>LED infrarouge (pin 5)</strong></div>
+            </div>
           </div>
-          <div class="project-info-card">
-            <h4>Composants récepteur</h4>
-            <ul>
-              <li>Arduino (MCU)</li>
-              <li>Récepteur IR (pin 11)</li>
-              <li>Servomoteur (direction, pin 6)</li>
-              <li>Moteur brushless (vitesse, pin 9)</li>
-              <li>Buzzer (klaxon, pin 10)</li>
-              <li>LED bleue (trame valide)</li>
-              <li>LED verte (alimentation)</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Récepteur (kart)</h4>
+            <div class="proj-side-list">
+              <div class="proj-side-item"><span>Cerveau</span><strong>Arduino</strong></div>
+              <div class="proj-side-item"><span>Réception</span><strong>Capteur IR (pin 11)</strong></div>
+              <div class="proj-side-item"><span>Direction</span><strong>Servomoteur (pin 6)</strong></div>
+              <div class="proj-side-item"><span>Vitesse</span><strong>Moteur brushless (pin 9)</strong></div>
+              <div class="proj-side-item"><span>Klaxon</span><strong>Buzzer 4 kHz (pin 10)</strong></div>
+            </div>
           </div>
-          <div class="project-info-card">
-            <h4>Étapes du projet</h4>
-            <ul>
-              <li>Analyse du besoin et architecture</li>
-              <li>Développement bibliothèque NEC</li>
-              <li>Programmation de l'émetteur</li>
-              <li>Programmation du récepteur</li>
-              <li>Tests et validation terrain</li>
-            </ul>
+
+          <div class="proj-side-card reveal">
+            <h4>Document</h4>
+            <a class="proj-doc-link" href="docs/KAH_DDC_EQ22.pdf" target="_blank" rel="noreferrer">
+              <span class="proj-doc-icon">📄</span>
+              <span class="proj-doc-label">DDC — KAH EQ22<br><small>Dossier de conception</small></span>
+              <span class="proj-doc-arrow">↗</span>
+            </a>
           </div>
+
+          <div class="proj-side-card reveal">
+            <h4>Étapes clés</h4>
+            <div class="proj-steps">
+              <div class="proj-step proj-step-done">Analyse du besoin</div>
+              <div class="proj-step proj-step-done">Conception protocole NEC</div>
+              <div class="proj-step proj-step-done">Programmation émetteur</div>
+              <div class="proj-step proj-step-done">Programmation récepteur</div>
+              <div class="proj-step proj-step-done">Tests & validation terrain</div>
+            </div>
+          </div>
+
         </aside>
       </div>
     </section>
   </main>
 
+  <!-- Modals explicatifs -->
+  <div class="proj-modal" id="explain-infrarouge"><div class="proj-modal-bd"></div><div class="proj-modal-bx"><button class="proj-modal-cl">✕</button><h4>Signal infrarouge</h4><p>L'infrarouge est une lumière invisible à l'œil humain. C'est exactement le même principe que votre télécommande de télévision : une LED émet des flashs très rapides de lumière infrarouge pour transmettre des informations. Le récepteur capte ces flashs et les décode pour comprendre les commandes envoyées.</p></div></div>
+  <div class="proj-modal" id="explain-arduino"><div class="proj-modal-bd"></div><div class="proj-modal-bx"><button class="proj-modal-cl">✕</button><h4>Arduino</h4><p>Un Arduino est un petit ordinateur programmable de la taille d'une carte de crédit. Il lit des capteurs (boutons, molettes), exécute un programme, et contrôle des actionneurs (moteurs, LEDs, buzzers). Il est très utilisé en électronique pour les projets éducatifs et les prototypes. Dans ce projet, il y en a un dans la télécommande et un sur le kart.</p></div></div>
+  <div class="proj-modal" id="explain-nec"><div class="proj-modal-bd"></div><div class="proj-modal-bx"><button class="proj-modal-cl">✕</button><h4>Protocole NEC infrarouge</h4><p>Un protocole de communication est un langage commun que deux appareils utilisent pour se comprendre. Le protocole NEC est l'un des plus répandus pour les télécommandes infrarouges. Il définit comment coder les informations (vitesse, direction, klaxon) en une série de flashs lumineux : chaque commande est représentée par une séquence précise de flashs courts et longs.</p></div></div>
+  <div class="proj-modal" id="explain-brushless"><div class="proj-modal-bd"></div><div class="proj-modal-bx"><button class="proj-modal-cl">✕</button><h4>Moteur brushless</h4><p>Un moteur brushless (sans balais) est un moteur électrique très puissant et efficace. Contrairement aux moteurs classiques, il n'a pas de pièces qui frottent, ce qui le rend plus durable et plus rapide. C'est le même type de moteur que celui des drones. Ici, il entraîne l'hélice qui propulse le kart. Sa vitesse est contrôlée par un signal numérique (PWM) envoyé par l'Arduino.</p></div></div>
+  <div class="proj-modal" id="explain-servo"><div class="proj-modal-bd"></div><div class="proj-modal-bx"><button class="proj-modal-cl">✕</button><h4>Servomoteur</h4><p>Un servomoteur est un moteur qui peut tourner avec précision vers un angle donné. Par exemple, si on lui demande de tourner à 90°, il ira exactement à 90° et maintiendra cette position. Dans le kart, il contrôle les roues avant pour diriger le véhicule — comme le volant d'une voiture. La direction (0 à 31) reçue par infrarouge est traduite en angle (0° à 180°).</p></div></div>
+
   <footer class="footer">
     <div class="footer-grid">
-      <div>
-        <h4>Établissement</h4>
-        <ul>
-          <li>IUT de Bordeaux</li>
-          <li>BUT GEII</li>
-          <li><a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" rel="noreferrer">Site officiel</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Mentions légales</h4>
-        <ul>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="confidentialite.html">Confidentialité</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Portfolio</h4>
-        <ul>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="projects.html">Projets</a></li>
-          <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacts</h4>
-        <ul>
-          <li><a href="mailto:kelyann.crime@etu.u-bordeaux.fr">kelyann.crime@etu.u-bordeaux.fr</a></li>
-          <li><a href="https://www.linkedin.com/in/kelyann-crim%C3%A9-219b1539a" target="_blank" rel="noreferrer">LinkedIn</a></li>
-        </ul>
-      </div>
+      <div><h4>Établissement</h4><ul><li>IUT de Bordeaux</li><li>BUT GEII</li><li><a href="https://www.iut.u-bordeaux.fr/geii/" target="_blank" rel="noreferrer">Site officiel</a></li></ul></div>
+      <div><h4>Mentions légales</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+      <div><h4>Portfolio</h4><ul><li><a href="about.html">À propos</a></li><li><a href="experience.html">Expérience</a></li><li><a href="projects.html">Projets</a></li><li><a href="skills.html">Compétences</a></li></ul></div>
+      <div><h4>Contacts</h4><ul><li><a href="mailto:kelyann.crime@etu.u-bordeaux.fr">kelyann.crime@etu.u-bordeaux.fr</a></li><li><a href="https://www.linkedin.com/in/kelyann-crim%C3%A9-219b1539a" target="_blank" rel="noreferrer">LinkedIn</a></li></ul></div>
     </div>
-    <p class="footer-note">© 2026 Kelyann CRIME</p>
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    (function(){
+      document.querySelectorAll('.proj-explain, .proj-explain-inline').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          const modal = document.getElementById('explain-' + btn.dataset.explain);
+          if(modal){ modal.classList.add('open'); document.body.classList.add('lock-scroll'); }
+        });
+      });
+      document.querySelectorAll('.proj-modal').forEach(modal => {
+        modal.querySelector('.proj-modal-bd').addEventListener('click', () => { modal.classList.remove('open'); document.body.classList.remove('lock-scroll'); });
+        modal.querySelector('.proj-modal-cl').addEventListener('click', () => { modal.classList.remove('open'); document.body.classList.remove('lock-scroll'); });
+      });
+      document.addEventListener('keydown', e => { if(e.key==='Escape') document.querySelectorAll('.proj-modal.open').forEach(m=>{ m.classList.remove('open'); document.body.classList.remove('lock-scroll'); }); });
+    })();
+  </script>
 </body>
 </html>

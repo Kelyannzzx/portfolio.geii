@@ -2,20 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compétences | Kelyann CRIME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page-title="Compétences">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-title">Compétences</div>
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -28,83 +24,584 @@
       </div>
       <ul class="nav-links">
         <li><a href="about.html">À propos</a></li>
+        <li><a href="experience.html">Expérience</a></li>
         <li><a href="skills.html" aria-current="page">Compétences</a></li>
-        <li><a href="matieres.html">Matières</a></li>
         <li><a href="projects.html">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <a class="nav-cta" href="contact.html">Discuter</a>
     </nav>
-
-    <div class="hero-grid">
+    <div class="hero-grid project-page-hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Compétences</p>
-        <h1>Mon cadre de compétences</h1>
-        <p class="lead">Clique sur une carte pour ouvrir les détails de chaque bloc C1 à C4.</p>
+        <p class="eyebrow xp-eyebrow-mono">// BUT GEII · PORTFOLIO DE COMPÉTENCES</p>
+        <h1>Compétences</h1>
+        <p class="lead">Clique sur une sous-compétence pour voir les preuves.</p>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section reveal" id="skills">
-      <div class="skills-grid">
-        <div class="skill-card interactive-card">
-          <h3>C1 — Concevoir</h3>
-          <div class="skill-content" hidden>
-            <p>Imaginer et dimensionner des systèmes électroniques et informatiques répondant à un besoin précis.</p>
-            <ul>
-              <li>Analyse du besoin et rédaction de cahier des charges.</li>
-              <li>Choix des composants et calculs de dimensionnement.</li>
-              <li>Schémas, simulation, et préparation de routage PCB.</li>
-            </ul>
+    <section class="section">
+      <div class="reveal" style="max-width:760px">
+
+        <!-- Bannière statut S1 -->
+        <div class="sk-s1-status reveal">
+          <span class="sk-s1-dot"></span>
+          <span>Semestre 1 · <strong>6 apprentissages critiques validés</strong></span>
+          <span class="sk-s1-tag">C1 · C2</span>
+        </div>
+
+        <!-- C1 -->
+        <div class="sk-block">
+          <div class="sk-block-header sk-block-header--c1">
+            <span class="sk-block-code">C1</span>
+            <p class="sk-block-name">Concevoir la partie GEII d'un système</p>
+            <span class="sk-block-lvl">Niveau 1 · S1</span>
+          </div>
+          <div class="sk-block-body">
+            <div class="sk-block-rows">
+              <button class="sk-ac-row" data-drawer="ac11">
+                <span class="sk-ac-code">AC 1.1</span>
+                <span class="sk-ac-label">Produire une analyse fonctionnelle d'un système simple</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+              <button class="sk-ac-row" data-drawer="ac12">
+                <span class="sk-ac-code">AC 1.2</span>
+                <span class="sk-ac-label">Réaliser un prototype pour des solutions techniques matériel et/ou logiciel</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+              <button class="sk-ac-row" data-drawer="ac13">
+                <span class="sk-ac-code">AC 1.3</span>
+                <span class="sk-ac-label">Rédiger un dossier de fabrication à partir d'un dossier de conception</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+            </div>
+            <img class="sk-block-illus" src="Image/concevoir-illustration.jpg" alt="Conception — plans, relevés et modélisation 3D">
           </div>
         </div>
-        <div class="skill-card interactive-card">
-          <h3>C2 — Vérifier</h3>
-          <div class="skill-content" hidden>
-            <p>Tester et valider le fonctionnement d'un système, de la mesure à l'analyse des résultats.</p>
-            <ul>
-              <li>Mise en place de protocoles et plans de tests.</li>
-              <li>Mesures, bancs de test, exploitation des données.</li>
-              <li>Rapport de validation et propositions d'amélioration.</li>
-            </ul>
+
+        <!-- C2 -->
+        <div class="sk-block">
+          <div class="sk-block-header sk-block-header--c2">
+            <span class="sk-block-code">C2</span>
+            <p class="sk-block-name">Vérifier la partie GEII d'un système</p>
+            <span class="sk-block-lvl">Niveau 1 · S1</span>
+          </div>
+          <div class="sk-block-body">
+            <div class="sk-block-rows">
+              <button class="sk-ac-row" data-drawer="ac21">
+                <span class="sk-ac-code">AC 2.1</span>
+                <span class="sk-ac-label">Appliquer une procédure d'essais</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+              <button class="sk-ac-row" data-drawer="ac22">
+                <span class="sk-ac-code">AC 2.2</span>
+                <span class="sk-ac-label">Identifier un dysfonctionnement</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+              <button class="sk-ac-row" data-drawer="ac23">
+                <span class="sk-ac-code">AC 2.3</span>
+                <span class="sk-ac-label">Décrire les effets d'un dysfonctionnement</span>
+                <span class="sk-ac-arrow">→</span>
+              </button>
+            </div>
+            <img class="sk-block-illus" src="Image/verifier-illustration.jpg" alt="Vérification — mesures à l'oscilloscope et relevés d'essais">
           </div>
         </div>
-        <div class="skill-card interactive-card">
-          <h3>C3 — Maintenir</h3>
-          <div class="skill-content" hidden>
-            <p>Diagnostiquer, corriger et fiabiliser des équipements existants ou en production.</p>
-            <ul>
-              <li>Diagnostic de panne par mesures ciblées.</li>
-              <li>Maintenance préventive et corrective.</li>
-              <li>Documentation et passage de consignes.</li>
-            </ul>
+
+        <!-- C3 -->
+        <div class="sk-block">
+          <div class="sk-block-header sk-block-header--c3">
+            <span class="sk-block-code">C3</span>
+            <p class="sk-block-name">Assurer le maintien en condition opérationnelle d'un système</p>
+            <span class="sk-block-lvl">À venir · S2</span>
           </div>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 3.1</span>
+            <span class="sk-ac-label">Exécuter l'entretien et le contrôle d'un système en respectant une procédure</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 3.2</span>
+            <span class="sk-ac-label">Exécuter une opération de maintenance (corrective, préventive, améliorative)</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 3.3</span>
+            <span class="sk-ac-label">Diagnostiquer un dysfonctionnement dans un système</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 3.4</span>
+            <span class="sk-ac-label">Identifier la cause racine d'un dysfonctionnement</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
         </div>
-        <div class="skill-card interactive-card">
-          <h3>C4 — Implanter</h3>
-          <div class="skill-content" hidden>
-            <p>Programmer et déployer des solutions sur microcontrôleurs ou systèmes embarqués.</p>
-            <ul>
-              <li>Développement embarqué (C/Arduino) et timing.</li>
-              <li>Intégration capteurs/actionneurs, gestion énergétique.</li>
-              <li>Déploiement, essais terrain et corrections.</li>
-            </ul>
+
+        <!-- C4 -->
+        <div class="sk-block">
+          <div class="sk-block-header sk-block-header--c4">
+            <span class="sk-block-code">C4</span>
+            <p class="sk-block-name">Installer tout ou partie d'un système de production, de conversion et de gestion d'énergie sur site</p>
+            <span class="sk-block-lvl">À venir · S2</span>
           </div>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 4.1</span>
+            <span class="sk-ac-label">Appliquer la procédure d'installation d'un système</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
+          <button class="sk-ac-row sk-ac-row--locked" disabled>
+            <span class="sk-ac-code">AC 4.2</span>
+            <span class="sk-ac-label">Exécuter la mise en service d'un système en respectant la procédure</span>
+            <span class="sk-ac-locked-badge">Non évalué</span>
+          </button>
         </div>
+
       </div>
     </section>
+  </main>
 
-    <div class="modal" id="skills-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close></div>
-      <div class="modal-card">
-        <button class="modal-close" type="button" aria-label="Fermer">×</button>
-        <p class="eyebrow">Compétence</p>
-        <h3 id="skills-modal-title">Titre</h3>
-        <div id="skills-modal-body" class="section-lead"></div>
+  <!-- ===== DRAWERS ===== -->
+
+  <!-- AC 1.1 -->
+  <div class="sk-drawer" id="ac11" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 1.1</span>
+        <h2 class="sk-drawer-title">Produire une analyse fonctionnelle d'un système simple</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Traduire un besoin client exprimé en mots en une architecture technique structurée et exploitable.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">Deux projets du semestre 1 m'ont confronté à l'analyse fonctionnelle : le thermomètre de bain (TDB) commandé par Baby&nbsp;Corporation, et la carte de signalisation lumineuse (SLR).</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Ma démarche</p>
+          <ul class="sk-step-list">
+            <li>Décomposition du TDB en <strong>4 blocs fonctionnels</strong> — Acquisition, Traitement, Action, Énergie — à partir du cahier des charges.</li>
+            <li>Traduction des besoins SLR (clignotement LED jaune, LEDs rouge et verte continues) en <strong>fonctions électroniques</strong> identifiées.</li>
+            <li>Formalisation de l'architecture sous forme de <strong>synoptique</strong> et de schéma électrique sous ISIS.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Je sais passer d'un besoin en langage naturel à une architecture technique claire, étape indispensable avant toute conception.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-synoptique.png" alt="Synoptique TDB — 4 blocs fonctionnels">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB</p>
+            <p class="sk-proof-card-title">Synoptique d'architecture — 4 blocs fonctionnels</p>
+            <p class="sk-proof-card-desc">Décomposition du thermomètre de bain en blocs Acquisition, Traitement, Action et Énergie. Réalisé en équipe dans le cadre du dossier DDC.</p>
+            <a class="sk-proof-card-link" href="project-thermometre.html">Voir le projet →</a>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/Image SLR/schema electrique SLR .png" alt="Schéma électrique ISIS — SLR">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet SLR</p>
+            <p class="sk-proof-card-title">Schéma électrique ISIS (Proteus)</p>
+            <p class="sk-proof-card-desc">Analyse fonctionnelle du circuit lumineux : NE555 en astable, résistances de temporisation, 3 LEDs avec résistances de limitation. Réalisé sous ISIS.</p>
+            <a class="sk-proof-card-link" href="project-rafale.html">Voir le projet →</a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </main>
+  </div>
+
+  <!-- AC 1.2 -->
+  <div class="sk-drawer" id="ac12" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 1.2</span>
+        <h2 class="sk-drawer-title">Réaliser un prototype pour des solutions techniques matériel et/ou logiciel</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Trois prototypes — deux matériels, un logiciel — fabriqués, testés et livrés en un seul semestre.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">Chaque projet du semestre répondait à un cahier des charges précis et devait aboutir à un prototype fonctionnel et livrable.</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Ma démarche</p>
+          <ul class="sk-step-list">
+            <li><strong>SLR</strong> — PCB simple face entièrement fabriqué à l'IUT : routage ARES, gravure par oxydoréduction, perçage et soudure des composants THT.</li>
+            <li><strong>TDB</strong> — PCB double face avec composants CMS et THT soudés à la main.</li>
+            <li><strong>KAH</strong> — prototype logiciel en C/Arduino : décodage du protocole infrarouge NEC, pilotage du moteur, du servomoteur et du buzzer.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Je sais mener un prototype, matériel comme logiciel, de la conception jusqu'à une livraison conforme aux attentes.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/slr-render-3d.png" alt="PCB SLR — rendu 3D SolidWorks">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet SLR</p>
+            <p class="sk-proof-card-title">PCB simple face fabriqué à l'IUT</p>
+            <p class="sk-proof-card-desc">Fabrication complète : routage ARES, gravure oxydoréduction, perçage (Ø 0,8–1,5 mm), soudure des composants THT. Rendu 3D sous SolidWorks.</p>
+            <a class="sk-proof-card-link" href="project-rafale.html">Voir le projet →</a>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/carte-tdb.png" alt="PCB TDB — carte double face">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB</p>
+            <p class="sk-proof-card-title">PCB double face — Thermomètre de bain</p>
+            <p class="sk-proof-card-desc">Circuit sur PCB double face 100 × 60 mm. Soudure de composants CMS (SMD) et THT. Prototype fonctionnel livré à Baby Corporation.</p>
+            <a class="sk-proof-card-link" href="project-thermometre.html">Voir le projet →</a>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/photo KAH/CARTE KAH.png" alt="Carte KAH — shield Arduino avec module IR">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet KAH</p>
+            <p class="sk-proof-card-title">Code Arduino embarqué — Kart à Hélice</p>
+            <p class="sk-proof-card-desc">Prototype logiciel : décodage du protocole infrarouge NEC, gestion moteur DC, servomoteur de direction et buzzer. Développé en C sur Arduino.</p>
+            <a class="sk-proof-card-link" href="project-kah.html">Voir le projet →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AC 1.3 -->
+  <div class="sk-drawer" id="ac13" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 1.3</span>
+        <h2 class="sk-drawer-title">Rédiger un dossier de fabrication à partir d'un dossier de conception</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Transformer un dossier de conception en un dossier directement exploitable en atelier.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">À partir des dossiers de conception (DDC) de mes projets, j'ai produit les dossiers de fabrication (DDF) correspondants — pour la carte Lumière (SLR), le Kart à Hélice (émetteur et récepteur) et le thermomètre de bain (TDB). Exemple détaillé ci-dessous : la carte Lumière, dont le DDC fournissait le schéma ISIS et les calculs de dimensionnement des résistances et du NE555.</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Ma démarche</p>
+          <ul class="sk-step-list">
+            <li>Rédaction de la <strong>nomenclature</strong> complète : références, valeurs, empreintes et quantités de chaque composant.</li>
+            <li>Établissement du <strong>plan de perçage</strong> adapté à chaque composant — 0,8&nbsp;mm pour les résistances, 1,2&nbsp;mm pour le NE555, 1,5&nbsp;mm pour les connecteurs.</li>
+            <li>Préparation du <strong>routage ARES</strong> prêt à graver.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Mon dossier a servi de guide direct à la fabrication physique du PCB : je sais produire une documentation technique exploitable par un tiers.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/Image SLR/Liste composants SLR.png" alt="Liste des composants SLR">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet SLR — Dossier DDF</p>
+            <p class="sk-proof-card-title">Liste des composants</p>
+            <p class="sk-proof-card-desc">Nomenclature complète de la carte Lumière : références, valeurs, empreintes et quantités. Rédigée à partir du dossier de conception DDC.</p>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet SLR — Dossier DDF</p>
+            <p class="sk-proof-card-title">Dossier de fabrication complet (PDF)</p>
+            <p class="sk-proof-card-desc">Dossier DDF incluant schéma de routage ARES, plan de perçage, nomenclature et procédure d'assemblage.</p>
+            <a class="sk-proof-card-link" href="SAE SLR-2/LUMIERE_SMD.pdf" target="_blank" rel="noreferrer">Télécharger le PDF →</a>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projets KAH &amp; TDB — Dossiers DDF</p>
+            <p class="sk-proof-card-title">Autres dossiers de fabrication rédigés</p>
+            <p class="sk-proof-card-desc">DDF complets — schéma électrique, nomenclature, typons, plan de perçage et schéma d'implantation — produits en équipe pour le Kart à Hélice (émetteur et récepteur) et le thermomètre de bain.</p>
+            <div class="sk-proof-card-links">
+              <a class="sk-proof-card-link" href="docs/KAH_DDF_EMTT_EQ22.docx" download>DDF KAH — Émetteur →</a>
+              <a class="sk-proof-card-link" href="docs/KAH_DDF_RCPT_EQ22.docx" download>DDF KAH — Récepteur →</a>
+              <a class="sk-proof-card-link" href="docs/TDB_DDF_EQ23.docx" download>DDF TDB →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AC 2.1 -->
+  <div class="sk-drawer" id="ac21" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 2.1</span>
+        <h2 class="sk-drawer-title">Appliquer une procédure d'essais</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Mesurer, comparer aux spécifications, conclure objectivement sur la conformité.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">Les deux projets du semestre comportaient une procédure d'essais formalisée dans un dossier de vérification (DDV) que j'ai suivie pas à pas.</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Ma démarche</p>
+          <ul class="sk-step-list">
+            <li><strong>SLR</strong> — mesure de la période du clignotement à l'oscilloscope et calcul des courants pour valider les intensités lumineuses.</li>
+            <li><strong>TDB</strong> — mesure de l'autonomie réelle de la batterie et validation des trois seuils de température au thermomètre de référence.</li>
+            <li>Comparaison systématique des résultats au cahier des charges, puis <strong>conclusion de conformité chiffrée</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Je sais appliquer un protocole d'essai rigoureux et appuyer ma conclusion sur des mesures, pas sur une impression.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/Image SLR/slr-ddv-periode.jpg" alt="Mesure de la période du clignotement à l'oscilloscope Tektronix">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet SLR — Dossier DDV</p>
+            <p class="sk-proof-card-title">3 essais de vérification — carte Lumière</p>
+            <p class="sk-proof-card-desc">Protocole appliqué : Essai 1 — période clignotement (2,12 s / attendu 1,9 s, écart 12 %, tolérance ±20 %). Essai 2 — intensités lumineuses (500 mCd ±50 %). Essai 3 — vérification visuelle sous 5 V. Les 3 essais sont conformes.</p>
+            <div class="sk-proof-card-links">
+              <a class="sk-proof-card-link" href="project-rafale.html">Voir le projet →</a>
+              <a class="sk-proof-card-link" href="SAE SLR-2/SLR_LUMIERE_DDV_EQ01.docx" download>Télécharger le DDV →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-on.jpg" alt="TDB allumé — essai fonctionnel">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB — Dossier DDV</p>
+            <p class="sk-proof-card-title">Procédure d'essais — thermomètre de bain</p>
+            <p class="sk-proof-card-desc">Protocole appliqué : mesure autonomie (36,6 h pour 24 h requis), validation des 3 seuils de température, vérification coût (6,68 € pour 20 € max).</p>
+            <a class="sk-proof-card-link" href="project-thermometre.html">Voir le DDV →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AC 2.2 -->
+  <div class="sk-drawer" id="ac22" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 2.2</span>
+        <h2 class="sk-drawer-title">Identifier un dysfonctionnement</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Localiser l'origine d'un écart et distinguer un vrai défaut d'un écart toléré.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">Lors des tests du TDB, les seuils de basculement des LEDs ne correspondaient pas aux valeurs attendues du cahier des charges.</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Ma démarche</p>
+          <ul class="sk-step-list">
+            <li>Mesure des <strong>tensions de sortie des comparateurs</strong> à l'oscilloscope.</li>
+            <li>Origine localisée : les <strong>résistances du pont diviseur</strong> décalaient les seuils par rapport aux températures spécifiées.</li>
+            <li>Sur la SLR, l'écart de période mesuré (12&nbsp;%) restait dans la <strong>tolérance ±20&nbsp;%</strong> — donc acceptable, pas un défaut.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Je sais remonter d'un symptôme à sa cause et juger si un écart constitue réellement un dysfonctionnement.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-seuil-chaud.png" alt="TDB — LED rouge seuil eau chaude">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB</p>
+            <p class="sk-proof-card-title">Identification du seuil hors-norme — eau chaude</p>
+            <p class="sk-proof-card-desc">Lors des tests, la LED rouge s'allume au-delà de 38,4 °C. La mesure à l'oscilloscope a permis d'identifier que la tension de seuil du comparateur était hors tolérance — ajustement du pont diviseur effectué.</p>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-seuil-froid.png" alt="TDB — LED bleue seuil eau froide">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB</p>
+            <p class="sk-proof-card-title">Identification du seuil hors-norme — eau froide</p>
+            <p class="sk-proof-card-desc">La LED bleue signale une eau en dessous de 35,5 °C. La mesure de la tension NTC a confirmé la valeur de résistance à ajuster pour calquer le seuil sur la spécification.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AC 2.3 -->
+  <div class="sk-drawer" id="ac23" aria-hidden="true" role="dialog">
+    <div class="sk-drawer-bd"></div>
+    <div class="sk-drawer-panel">
+      <div class="sk-drawer-top">
+        <span class="sk-drawer-code">AC 2.3</span>
+        <h2 class="sk-drawer-title">Décrire les effets d'un dysfonctionnement</h2>
+        <button class="sk-drawer-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="sk-drawer-body">
+
+        <p class="sk-drawer-lead">Relier une cause technique à son impact concret sur l'utilisateur final.</p>
+
+        <div class="sk-acq-bar">
+          <span class="sk-acq-label">Niveau d'acquisition</span>
+          <div class="sk-acq-steps">
+            <span class="sk-acq-step">Initiée</span>
+            <span class="sk-acq-step sk-acq-step--active">Acquise</span>
+            <span class="sk-acq-step">Maîtrisée</span>
+          </div>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Contexte</p>
+          <p class="sk-drawer-sec-text">Le TDB est destiné au bain d'un nourrisson : un dysfonctionnement a des conséquences directes sur sa sécurité. Les effets devaient donc être décrits et documentés.</p>
+        </div>
+
+        <div class="sk-drawer-sec">
+          <p class="sk-drawer-sec-label">Effets décrits</p>
+          <ul class="sk-step-list">
+            <li><strong>Seuil haut mal calibré</strong> → LED rouge prématurée ou tardive : bain refusé à bonne température, ou risque de brûlure.</li>
+            <li><strong>Seuil bas mal calibré</strong> → une eau trop froide peut être masquée.</li>
+            <li>Effets consignés dans le dossier DDV, puis <strong>hiérarchisés selon leur criticité</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="sk-takeaway">
+          <span class="sk-takeaway-icon">💡</span>
+          <div class="sk-takeaway-body">
+            <p class="sk-takeaway-label">Ce que j'en retiens</p>
+            <p>Je sais évaluer la gravité d'un défaut du point de vue de l'utilisateur et prioriser les corrections en conséquence.</p>
+          </div>
+        </div>
+
+        <p class="sk-drawer-proofs-label">Preuves</p>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-seuil-chaud.png" alt="Effet — LED rouge eau trop chaude">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB — Effet observé</p>
+            <p class="sk-proof-card-title">LED rouge allumée — eau trop chaude (&gt; 38,4 °C)</p>
+            <p class="sk-proof-card-desc">Lorsque la température dépasse le seuil haut, seule la LED rouge s'allume. Cet effet signale un risque brûlure pour le nourrisson. Documenté dans le dossier DDV avec mesures à l'appui.</p>
+          </div>
+        </div>
+
+        <div class="sk-proof-card">
+          <img class="sk-proof-card-img proj-zoomable" src="Image/tdb-seuil-froid.png" alt="Effet — LED bleue eau trop froide">
+          <div class="sk-proof-card-body">
+            <p class="sk-proof-card-tag">Projet TDB — Effet observé</p>
+            <p class="sk-proof-card-title">LED bleue allumée — eau trop froide (&lt; 35,5 °C)</p>
+            <p class="sk-proof-card-desc">Sous le seuil bas, seule la LED bleue s'allume. Le circuit ne sélectionne qu'une seule LED à la fois — tout autre comportement (deux LEDs allumées simultanément) constitue un dysfonctionnement identifié et corrigé.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer-grid">
@@ -127,9 +624,9 @@
         <h4>Portfolio</h4>
         <ul>
           <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
           <li><a href="projects.html">Projets</a></li>
           <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
         </ul>
       </div>
       <div>
@@ -142,6 +639,40 @@
     </div>
     <p class="footer-note">© 2026 Kelyann CRIME</p>
   </footer>
+
   <script src="app.js"></script>
+  <script>
+    (function () {
+      const drawers = document.querySelectorAll('.sk-drawer');
+
+      const open = (id) => {
+        const d = document.getElementById(id);
+        if (!d) return;
+        d.classList.add('open');
+        d.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lock-scroll');
+        d.querySelector('.sk-drawer-close')?.focus();
+      };
+
+      const close = (d) => {
+        d.classList.remove('open');
+        d.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lock-scroll');
+      };
+
+      document.querySelectorAll('[data-drawer]').forEach(btn => {
+        btn.addEventListener('click', () => open(btn.dataset.drawer));
+      });
+
+      drawers.forEach(d => {
+        d.querySelector('.sk-drawer-bd')?.addEventListener('click', () => close(d));
+        d.querySelector('.sk-drawer-close')?.addEventListener('click', () => close(d));
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') drawers.forEach(d => d.classList.contains('open') && close(d));
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos | Kelyann CRIME</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,12 +12,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page-title="À propos">
-  <div class="splash">
-    <div class="splash-content">
-      <div class="splash-title">À propos</div>
-      <div class="splash-subtitle">IUT de Bordeaux</div>
-    </div>
-  </div>
   <div class="background fx-blur"></div>
   <div class="background fx-grid"></div>
 
@@ -28,8 +24,8 @@
       </div>
       <ul class="nav-links">
         <li><a href="about.html" aria-current="page">À propos</a></li>
+        <li><a href="experience.html">Expérience</a></li>
         <li><a href="skills.html">Compétences</a></li>
-        <li><a href="matieres.html">Matières</a></li>
         <li><a href="projects.html">Projets</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -38,39 +34,27 @@
 
     <div class="hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow">BUT GEII • Bordeaux</p>
+        <p class="eyebrow">BUT GEII · Bordeaux</p>
         <h1>Étudiant passionné d'électronique et de systèmes embarqués.</h1>
         <p class="lead">
-          De l'analyse du cahier des charges à l'industrialisation, je conçois des systèmes embarqués fiables en alliant expertise matérielle et développement logiciel.
+          De l'analyse du cahier des charges à l'industrialisation, je conçois des systèmes embarqués fiables en alliant matériel et logiciel.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="projects.html">Voir mes projets</a>
           <a class="btn ghost" href="contact.html">Me contacter</a>
         </div>
-        <div class="metrics">
-          <div class="metric">
-            <span>1re année</span>
-            <p>Parcours GEII Bordeaux</p>
-          </div>
-          <div class="metric">
-            <span>Conception de projets</span>
-            <p>Systèmes embarqués<br>Cartes électroniques</p>
-          </div>
-        </div>
       </div>
 
       <div class="hero-panel reveal">
-        <div class="panel-card">
-          <p class="eyebrow">Profil</p>
-          <h3>Kelyann CRIME</h3>
-          <p>Étudiant en BUT Génie Électrique et Informatique Industrielle, motivé par la mise au point de systèmes fiables et pédagogiques.</p>
+        <div class="about-photo-card">
+          <img src="Image/photo-kelyann.jpg" alt="Kelyann CRIME" class="about-photo">
         </div>
         <div class="panel-card highlight">
           <p class="eyebrow">Focus actuel</p>
           <ul class="panel-list">
-            <li>Développement de systèmes embarqués de bout en bout, de la conception matérielle à la programmation logicielle.</li>
-            <li>Conception de circuits électroniques : schématisation, simulation et initiation au routage PCB.</li>
-            <li>Structuration de protocoles de tests rigoureux pour valider des prototypes de manière fiable.</li>
+            <li>Conception de systèmes embarqués de bout en bout.</li>
+            <li>Schématisation, simulation et routage PCB.</li>
+            <li>Programmation Arduino / C et tests structurés.</li>
           </ul>
         </div>
       </div>
@@ -78,42 +62,106 @@
   </header>
 
   <main>
+
+    <!-- Intro lisible -->
     <section class="section reveal">
-      <div class="about-compact">
-        <p class="eyebrow">À propos</p>
-        <h3>Mon profil en bref</h3>
-        <p class="section-lead">
-          18 ans, curieux et rigoureux. Après un bac scientifique (spécialités maths et physique, option maths expertes),
-          je poursuis mon parcours en BUT GEII pour apprendre à concevoir, vérifier et maintenir des systèmes électroniques modernes.
+      <div class="about-intro">
+        <p class="eyebrow">Qui suis-je</p>
+        <h2>Un parcours entre Saint-Martin et Bordeaux</h2>
+        <p>
+          Né et élevé à <strong>Saint-Martin</strong>, j'ai grandi entre la rigueur des études et la passion du sport. Après un baccalauréat scientifique avec spécialités <strong>maths, physique-chimie et maths expertes</strong>, j'ai choisi de rejoindre la métropole pour intégrer le <strong>BUT GEII</strong> à l'IUT de Bordeaux.
         </p>
-        <div class="about-grid">
-          <div class="about-card interactive-card">
-            <h3>Ce que je cherche</h3>
-            <p>Des projets où l'on passe rapidement de l'idée au prototype fonctionnel, avec une vraie phase de tests et de validation.</p>
-            <ul>
-              <li>Travail d'équipe et partage méthodique.</li>
-              <li>Électronique de puissance et signaux.</li>
-              <li>Programmation embarquée et C/Arduino.</li>
-            </ul>
-          </div>
-          <div class="about-card interactive-card">
-            <h3>Forces</h3>
-            <ul>
-              <li>Analyse structurée des besoins avant la conception.</li>
-              <li>Mise en place de protocoles de test simples et fiables.</li>
-              <li>Pédagogie : vulgariser pour mieux ancrer les notions.</li>
-            </ul>
-          </div>
-          <div class="about-card interactive-card">
-            <h3>En ce moment</h3>
-            <ul>
-              <li>Perfectionnement en programmation temps réel.</li>
-              <li>Projet en cours : Kart à hélice.</li>
-            </ul>
-          </div>
+        <p>
+          Ce que j'aime ? Comprendre comment les choses fonctionnent, passer rapidement de l'idée au prototype, tester, valider, recommencer. Et toujours travailler en équipe — c'est là que j'apprends le plus.
+        </p>
+        <div class="about-pills">
+          <span class="about-pill">Curieux</span>
+          <span class="about-pill">Rigoureux</span>
+          <span class="about-pill">Esprit d'équipe</span>
+          <span class="about-pill">Pédagogue</span>
+          <span class="about-pill">Sportif</span>
         </div>
       </div>
     </section>
+
+    <!-- Frise chronologique -->
+    <section class="section reveal">
+      <div class="timeline-wrapper">
+        <div class="timeline-header">
+          <p class="eyebrow">Mon parcours</p>
+          <h2>Frise chronologique</h2>
+          <p>Les étapes clés de ma vie scolaire et professionnelle, de Saint-Martin à Bordeaux.</p>
+        </div>
+
+        <div class="tl">
+
+          <div class="tl-item tl-left">
+            <div class="tl-card">
+              <span class="tl-date">2018 — 2023</span>
+              <h3>Collège Soualiga</h3>
+              <p class="tl-place"><a href="https://maps.google.com/?q=Collège+Soualiga,+Route+de+la+Savane,+97150+Saint-Martin" target="_blank" rel="noreferrer" class="tl-place-link">📍 Saint-Martin</a></p>
+              <p>Parcours de la 6ème à la 3ème dans un établissement multiculturel caribéen.</p>
+            </div>
+            <div class="tl-dot"></div>
+          </div>
+
+          <div class="tl-item tl-right">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">Déc. 2022 — Jan. 2023</span>
+              <h3>Stage EDEIS</h3>
+              <p class="tl-place">Aéroport Grand-Case · Saint-Martin</p>
+              <p>Première immersion dans les métiers techniques, confirmation de l'attrait pour le génie électrique.</p>
+              <a class="tl-link" href="experience.html">Voir l'expérience →</a>
+            </div>
+          </div>
+
+          <div class="tl-item tl-left tl-highlight">
+            <div class="tl-card">
+              <span class="tl-date">Juillet 2023</span>
+              <h3>Brevet des collèges</h3>
+              <p class="tl-place">Collège Soualiga · Saint-Martin</p>
+              <p>DNB obtenu avec <strong>mention Très Bien</strong>.</p>
+              <span class="tl-badge">Mention Très Bien</span>
+            </div>
+            <div class="tl-dot tl-dot-accent"></div>
+          </div>
+
+          <div class="tl-item tl-right">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">2023 — 2025</span>
+              <h3>Lycée Robert Weinum</h3>
+              <p class="tl-place"><a href="https://maps.google.com/?q=Lycée+Robert+Weinum,+Route+de+la+Savane,+97150+Saint-Martin" target="_blank" rel="noreferrer" class="tl-place-link">📍 Saint-Martin</a></p>
+              <p>Filière scientifique, classe européenne anglais, maths expertes.</p>
+            </div>
+          </div>
+
+          <div class="tl-item tl-left tl-highlight">
+            <div class="tl-card">
+              <span class="tl-date">Juin 2025</span>
+              <h3>Baccalauréat</h3>
+              <p class="tl-place">Lycée Robert Weinum · Saint-Martin</p>
+              <p>Spécialités <strong>Maths</strong>, <strong>Physique-Chimie</strong>, option Maths Expertes. Certification Cambridge English.</p>
+              <span class="tl-badge">Mention AB · Cambridge</span>
+            </div>
+            <div class="tl-dot tl-dot-accent"></div>
+          </div>
+
+          <div class="tl-item tl-right tl-highlight">
+            <div class="tl-dot tl-dot-accent"></div>
+            <div class="tl-card tl-card-featured">
+              <span class="tl-date">Sept. 2025 — Aujourd'hui</span>
+              <h3>BUT GEII</h3>
+              <p class="tl-place">IUT de Bordeaux · Gradignan</p>
+              <p>Électronique, informatique industrielle, automatique, PCB. Projets SAE en équipe.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -137,9 +185,9 @@
         <h4>Portfolio</h4>
         <ul>
           <li><a href="about.html">À propos</a></li>
+          <li><a href="experience.html">Expérience</a></li>
           <li><a href="projects.html">Projets</a></li>
           <li><a href="skills.html">Compétences</a></li>
-          <li><a href="matieres.html">Matières</a></li>
         </ul>
       </div>
       <div>
