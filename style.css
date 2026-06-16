@@ -4101,9 +4101,9 @@ html[data-theme="dark"] {
   --panel: #0e0e12;
   --card: #0a0a0d;
   --border: rgba(255,255,255,0.10);
-  --text: #ededf2;
+  --text: #f1f1f5;
   --headline: #ffffff;
-  --muted: #9b9ba6;
+  --muted: #b8b8c4;
   --accent: #6f9bff;
   --accent-2: #8b9bff;
   --accent-3: #4cc4f5;
@@ -4172,6 +4172,12 @@ html[data-theme="dark"] .proj-file-chip,
 html[data-theme="dark"] .contact-list li {
   background: var(--panel);
   border-color: var(--border);
+}
+
+/* Dernière case À propos (frise) : fond clair en dur -> sombre accentué */
+html[data-theme="dark"] .tl-card-featured {
+  background: linear-gradient(135deg, rgba(111,155,255,0.14) 0%, #0b0b0f 100%);
+  border-color: rgba(111,155,255,0.3);
 }
 
 /* Cartes génériques : neutralise le liseré blanc */
