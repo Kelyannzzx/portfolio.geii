@@ -1,0 +1,126 @@
+/* chatbot.css — Fenêtre de chat. S'adapte au thème clair/sombre via les variables du site. */
+
+/* Positionner le bouton flottant d'ouverture (au-dessus du bouton thème) */
+.cb-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 74px;
+  z-index: 9500;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+/* Masquer la fenêtre par défaut */
+.cb-window {
+  position: fixed;
+  right: 18px;
+  bottom: 74px;
+  z-index: 9600;
+  width: min(370px, calc(100vw - 28px));
+  height: 520px;
+  max-height: calc(100vh - 110px);
+  display: none;
+  flex-direction: column;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* Afficher la fenêtre quand elle est ouverte */
+.cb-window.cb-open {
+  display: flex;
+}
+
+/* Styliser l'en-tête */
+.cb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--headline);
+}
+.cb-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Faire défiler la zone des messages */
+.cb-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Différencier les bulles utilisateur et assistant */
+.cb-msg {
+  max-width: 85%;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+.cb-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+}
+.cb-bot {
+  align-self: flex-start;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.cb-bot a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Disposer la barre de saisie */
+.cb-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+}
+.cb-input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.cb-send {
+  padding: 0 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cb-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

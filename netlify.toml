@@ -1,0 +1,13 @@
+# netlify.toml — Configuration du déploiement Netlify.
+
+[build]
+  # Publier le site statique depuis la racine du dépôt
+  publish = "."
+  # Indiquer où se trouvent les fonctions serverless
+  functions = "netlify/functions"
+
+[[redirects]]
+  # Rediriger /api/chat vers la fonction (le front continue d'appeler /api/chat)
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
