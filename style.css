@@ -4167,6 +4167,12 @@ html[data-theme="dark"] .footer {
   border-top-color: rgba(255,255,255,0.07);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
 }
+html[data-theme="dark"] .footer h4 { color: var(--headline); }
+html[data-theme="dark"] .footer a,
+html[data-theme="dark"] .footer li { color: #cdd2dd; }
+html[data-theme="dark"] .footer a:hover,
+html[data-theme="dark"] .footer a[aria-current="page"] { color: var(--accent); }
+html[data-theme="dark"] .footer-note { color: rgba(205,210,221,0.6); }
 
 /* Surfaces de cartes (anciennement blanches en dur) */
 html[data-theme="dark"] .metric,
