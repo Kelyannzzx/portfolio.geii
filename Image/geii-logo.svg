@@ -4,7 +4,7 @@
   <rect width="360" height="180" fill="#ffffff"/>
   <g transform="translate(24 22)">
     <text x="0" y="92" font-family="'Times New Roman', Georgia, serif" font-size="104" font-style="italic" fill="#1497dc">ge</text>
-    <text x="148" y="92" font-family="'Times New Roman', Georgia, serif" font-size="104" font-style="italic" font-weight="700" fill="#311816">ii</text>
+    <text x="99" y="92" font-family="'Times New Roman', Georgia, serif" font-size="104" font-style="italic" font-weight="700" fill="#311816">ii</text>
     <text x="54" y="122" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#2c1a17" letter-spacing="0.6">IUT de BORDEAUX</text>
   </g>
 </svg>
